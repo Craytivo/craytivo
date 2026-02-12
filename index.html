@@ -4,14 +4,115 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Justice Mubayiwa | Craytivo Web Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Manrope', 'ui-sans-serif', 'system-ui'],
+            display: ['Sora', 'Manrope', 'ui-sans-serif', 'system-ui']
+          }
+        }
+      }
+    };
+  </script>
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+  <style>
+    :root {
+      --brand-start: #0284c7;
+      --brand-end: #1d4ed8;
+      --glow-a: rgba(14, 165, 233, 0.28);
+      --glow-b: rgba(30, 64, 175, 0.24);
+    }
+    body.site-bg {
+      background:
+        radial-gradient(1000px 600px at 8% -12%, #dbeafe 0%, transparent 58%),
+        radial-gradient(1100px 560px at 92% -8%, #d1fae5 0%, transparent 52%),
+        #f8fafc;
+    }
+    .hero-orb {
+      position: absolute;
+      border-radius: 9999px;
+      filter: blur(60px);
+      pointer-events: none;
+      animation: float 8s ease-in-out infinite;
+    }
+    .hero-orb.one {
+      width: 320px;
+      height: 320px;
+      top: -120px;
+      right: -60px;
+      background: var(--glow-a);
+    }
+    .hero-orb.two {
+      width: 300px;
+      height: 300px;
+      bottom: -140px;
+      left: -70px;
+      background: var(--glow-b);
+      animation-delay: 1.2s;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-14px); }
+    }
+    main section h2 {
+      position: relative;
+      display: inline-block;
+      font-family: Sora, Manrope, ui-sans-serif, system-ui;
+    }
+    main section h2::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      width: 72px;
+      height: 4px;
+      border-radius: 9999px;
+      background: linear-gradient(90deg, var(--brand-start), var(--brand-end));
+    }
+    #thanks h2::after {
+      background: linear-gradient(90deg, #93c5fd, #ffffff);
+    }
+    .interactive-card {
+      transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+      will-change: transform;
+    }
+    .interactive-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 32px -22px rgba(2, 6, 23, 0.55);
+      border-color: #cbd5e1;
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 500ms ease, transform 500ms ease;
+    }
+    .reveal.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-orb, .interactive-card, .reveal {
+        animation: none !important;
+        transition: none !important;
+        transform: none !important;
+      }
+      .reveal {
+        opacity: 1;
+      }
+    }
+  </style>
 </head>
-<body class="overflow-x-hidden bg-slate-50 text-slate-900 antialiased">
+<body class="site-bg overflow-x-hidden text-slate-900 antialiased">
   <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[70] focus:rounded-md focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">Skip to content</a>
 
-  <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur">
+  <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 shadow-sm backdrop-blur">
     <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
       <a href="#top" class="text-lg font-semibold tracking-tight focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 rounded-md">Craytivo</a>
       <nav class="hidden items-center gap-6 md:flex" aria-label="Primary">
@@ -41,12 +142,14 @@
   </header>
 
   <main id="main-content">
-    <section id="top" class="scroll-mt-24 bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900 py-16 text-white sm:py-24 lg:py-28">
+    <section id="top" class="relative scroll-mt-24 overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900 py-16 text-white sm:py-24 lg:py-28">
+      <div class="hero-orb one"></div>
+      <div class="hero-orb two"></div>
       <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-10">
           <div class="max-w-3xl">
             <p class="mb-4 inline-flex rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide">Justice Mubayiwa • Craytivo</p>
-            <h1 class="text-3xl font-bold tracking-tight sm:text-5xl">Websites for small businesses that generate more calls and bookings.</h1>
+            <h1 class="font-display text-3xl font-bold tracking-tight sm:text-5xl">Websites for small businesses that generate more calls and bookings.</h1>
             <p class="mt-5 text-base text-slate-200 sm:text-lg">Mobile-first, SEO-ready, and conversion-focused builds with fast turnaround and clear communication.</p>
             <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <a href="#contact" class="rounded-md bg-white px-5 py-3 text-center text-sm font-semibold text-slate-900 shadow-sm hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white sm:text-left">Book Free 15-Min Call</a>
@@ -66,7 +169,7 @@
           </div>
           <div class="lg:justify-self-end">
             <div class="mx-auto max-w-md space-y-4 lg:max-w-none">
-              <article class="rounded-2xl border border-white/20 bg-white/10 p-5 shadow-lg backdrop-blur">
+              <article class="rounded-2xl border border-white/20 bg-white/10 p-5 shadow-lg backdrop-blur interactive-card">
                 <div class="flex items-start gap-3">
                   <span class="mt-0.5 inline-flex h-9 w-9 items-center justify-center rounded-lg bg-white/15" aria-hidden="true">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
@@ -80,7 +183,7 @@
                   </div>
                 </div>
               </article>
-              <article class="rounded-2xl border border-white/20 bg-white/10 p-5 shadow-lg backdrop-blur">
+              <article class="rounded-2xl border border-white/20 bg-white/10 p-5 shadow-lg backdrop-blur interactive-card">
                 <div class="flex items-start gap-3">
                   <span class="mt-0.5 inline-flex h-9 w-9 items-center justify-center rounded-lg bg-white/15" aria-hidden="true">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
@@ -93,7 +196,7 @@
                   </div>
                 </div>
               </article>
-              <article class="rounded-2xl border border-white/20 bg-white/10 p-5 shadow-lg backdrop-blur">
+              <article class="rounded-2xl border border-white/20 bg-white/10 p-5 shadow-lg backdrop-blur interactive-card">
                 <div class="flex items-start gap-3">
                   <span class="mt-0.5 inline-flex h-9 w-9 items-center justify-center rounded-lg bg-white/15" aria-hidden="true">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
@@ -117,23 +220,23 @@
         <h2 class="text-3xl font-bold tracking-tight">Services</h2>
         <p class="mt-3 max-w-2xl text-slate-600">Services built to increase inquiries and reduce friction.</p>
         <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm interactive-card">
             <h3 class="text-lg font-semibold">Landing Pages</h3>
             <p class="mt-2 text-sm text-slate-600">Focused pages for campaigns, offers, and bookings.</p>
           </article>
-          <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm interactive-card">
             <h3 class="text-lg font-semibold">Business Websites</h3>
             <p class="mt-2 text-sm text-slate-600">Credible websites that explain your offer clearly.</p>
           </article>
-          <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm interactive-card">
             <h3 class="text-lg font-semibold">E-commerce Setup</h3>
             <p class="mt-2 text-sm text-slate-600">Store setup optimized for trust and smoother checkout.</p>
           </article>
-          <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm interactive-card">
             <h3 class="text-lg font-semibold">Performance & SEO</h3>
             <p class="mt-2 text-sm text-slate-600">Speed, structure, and SEO improvements that matter.</p>
           </article>
-          <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:col-span-2 lg:col-span-1">
+          <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:col-span-2 lg:col-span-1 interactive-card">
             <h3 class="text-lg font-semibold">Maintenance & Support</h3>
             <p class="mt-2 text-sm text-slate-600">Ongoing updates, fixes, and performance support.</p>
           </article>
@@ -159,15 +262,15 @@
       <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl font-bold tracking-tight">Process</h2>
         <div class="mt-10 grid gap-6 md:grid-cols-3">
-          <article class="rounded-2xl bg-white p-6 shadow-sm">
+          <article class="rounded-2xl bg-white p-6 shadow-sm interactive-card">
             <p class="text-sm font-semibold text-blue-700">1. Strategy</p>
             <p class="mt-2 text-sm text-slate-600">Define goals, audience, and offer before design starts.</p>
           </article>
-          <article class="rounded-2xl bg-white p-6 shadow-sm">
+          <article class="rounded-2xl bg-white p-6 shadow-sm interactive-card">
             <p class="text-sm font-semibold text-blue-700">2. Build</p>
             <p class="mt-2 text-sm text-slate-600">Build a fast, responsive site with clean code.</p>
           </article>
-          <article class="rounded-2xl bg-white p-6 shadow-sm">
+          <article class="rounded-2xl bg-white p-6 shadow-sm interactive-card">
             <p class="text-sm font-semibold text-blue-700">3. Launch & Optimize</p>
             <p class="mt-2 text-sm text-slate-600">Launch, measure, and improve based on real behavior.</p>
           </article>
@@ -179,19 +282,19 @@
       <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl font-bold tracking-tight">Selected Work</h2>
         <div class="mt-10 grid gap-6 md:grid-cols-3">
-          <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm interactive-card">
             <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Project Type: Local Service Landing Page</p>
             <p class="mt-3 text-sm"><strong>Problem:</strong> Traffic was not turning into calls.</p>
             <p class="mt-2 text-sm"><strong>Solution:</strong> Sharper messaging, clearer CTAs, simpler form.</p>
             <p class="mt-2 text-sm"><strong>Result:</strong> Better lead quality and more completed forms.</p>
           </article>
-          <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm interactive-card">
             <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Project Type: Business Website Refresh</p>
             <p class="mt-3 text-sm"><strong>Problem:</strong> Outdated design hurt trust and mobile UX.</p>
             <p class="mt-2 text-sm"><strong>Solution:</strong> New structure, modern UI, mobile-first performance fixes.</p>
             <p class="mt-2 text-sm"><strong>Result:</strong> Higher engagement and more direct inquiries.</p>
           </article>
-          <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm interactive-card">
             <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Project Type: E-commerce Setup</p>
             <p class="mt-3 text-sm"><strong>Problem:</strong> Product pages lacked trust and clear flow.</p>
             <p class="mt-2 text-sm"><strong>Solution:</strong> Cleaner templates, better content hierarchy, technical cleanup.</p>
@@ -210,13 +313,13 @@
       <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl font-bold tracking-tight">Testimonials</h2>
         <div class="mt-10 grid gap-6 md:grid-cols-3">
-          <blockquote class="rounded-2xl bg-white p-6 shadow-sm">
+          <blockquote class="rounded-2xl bg-white p-6 shadow-sm interactive-card">
             <p class="text-sm text-slate-700">Sample testimonial: "Fast delivery, clear communication, and a site that finally fits our brand."</p>
           </blockquote>
-          <blockquote class="rounded-2xl bg-white p-6 shadow-sm">
+          <blockquote class="rounded-2xl bg-white p-6 shadow-sm interactive-card">
             <p class="text-sm text-slate-700">Sample testimonial: "Sharper page, faster load times, and better quality leads."</p>
           </blockquote>
-          <blockquote class="rounded-2xl bg-white p-6 shadow-sm">
+          <blockquote class="rounded-2xl bg-white p-6 shadow-sm interactive-card">
             <p class="text-sm text-slate-700">Sample testimonial: "Simple process, strong execution, and real business results."</p>
           </blockquote>
         </div>
@@ -241,7 +344,7 @@
             </ul>
           </div>
         </div>
-        <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm interactive-card">
           <h3 class="text-lg font-semibold">Why Craytivo</h3>
           <ul class="mt-4 space-y-3 text-sm text-slate-700">
             <li>Clear communication from kickoff to launch</li>
@@ -330,7 +433,7 @@
               </div>
               <div>
                 <p class="font-medium text-slate-900">How long does it take?</p>
-                <p class="mt-1">Most small business sites launch in a few weeks, based on scope and feedback speed.</p>
+                <p class="mt-1">Some sites can be completed in as little as 4 days. Larger projects launch in a few weeks, based on scope and feedback speed.</p>
               </div>
               <div>
                 <p class="font-medium text-slate-900">What happens after I submit?</p>
@@ -410,6 +513,28 @@
         submitBtn.textContent = 'Send Inquiry';
       }, 12000);
     });
+
+    // Subtle reveal animation for section content
+    const revealTargets = document.querySelectorAll(
+      'main section h2, main section article, main section blockquote, main section .rounded-2xl, main section .rounded-3xl'
+    );
+    revealTargets.forEach((el, index) => {
+      el.classList.add('reveal');
+      el.style.transitionDelay = `${Math.min(index * 30, 180)}ms`;
+    });
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { rootMargin: '0px 0px -12% 0px', threshold: 0.12 }
+    );
+    revealTargets.forEach((el) => observer.observe(el));
   </script>
 </body>
 </html>
