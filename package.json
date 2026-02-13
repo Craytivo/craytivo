@@ -1,0 +1,26 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "tailwindcss -c ./config/tailwind.config.js -i ./styles/tailwind.input.css -o ./assets/css/tailwind.css --minify",
+    "watch:css": "tailwindcss -c ./config/tailwind.config.js -i ./styles/tailwind.input.css -o ./assets/css/tailwind.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Craytivo/craytivo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Craytivo/craytivo/issues"
+  },
+  "homepage": "https://github.com/Craytivo/craytivo#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}

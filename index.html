@@ -3,38 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Craytivo | Web Developer for Small Businesses</title>
-  <meta name="description" content="Craytivo builds conversion-focused, mobile-first websites for small and medium businesses. Book a free 15-minute strategy call and get a page plan, timeline, and quote range." />
+  <title>Craytivo | Small Business Web Developer & Website Design</title>
+  <meta name="description" content="Craytivo provides small business website design and web development with a conversion-focused, mobile-first approach. Book a free 15-minute strategy call for a page plan, timeline, and quote range." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://craytivo.com/" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Craytivo | Web Developer for Small Businesses" />
-  <meta property="og:description" content="Conversion-focused, mobile-first websites for SMBs with fast turnaround and clear communication." />
+  <meta property="og:title" content="Craytivo | Small Business Web Developer & Website Design" />
+  <meta property="og:description" content="Small business website design and web development with conversion-focused, mobile-first builds and clear timelines." />
   <meta property="og:url" content="https://craytivo.com/" />
   <meta property="og:image" content="https://craytivo.com/assets/logos/craytivo.png" />
   <meta property="og:site_name" content="Craytivo" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Craytivo | Web Developer for Small Businesses" />
-  <meta name="twitter:description" content="Conversion-focused, mobile-first websites for SMBs with fast turnaround and clear communication." />
+  <meta name="twitter:title" content="Craytivo | Small Business Web Developer & Website Design" />
+  <meta name="twitter:description" content="Small business website design and web development with conversion-focused, mobile-first builds and clear timelines." />
   <meta name="twitter:image" content="https://craytivo.com/assets/logos/craytivo.png" />
   <link rel="icon" type="image/png" href="assets/logos/craytivo.png" />
   <link rel="apple-touch-icon" href="assets/logos/craytivo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700&display=swap" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Manrope', 'ui-sans-serif', 'system-ui'],
-            display: ['Sora', 'Manrope', 'ui-sans-serif', 'system-ui']
-          }
-        }
-      }
-    };
-  </script>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700&display=swap" rel="stylesheet" /></noscript>
+  <link rel="stylesheet" href="assets/css/tailwind.css" />
   <link rel="preload" as="style" href="https://assets.calendly.com/assets/external/widget.css" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript><link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" /></noscript>
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
@@ -53,7 +42,7 @@
       "name": "Craytivo",
       "url": "https://craytivo.com/",
       "image": "https://craytivo.com/assets/logos/craytivo.png",
-      "description": "Craytivo builds conversion-focused, mobile-first websites for small and medium businesses.",
+      "description": "Craytivo provides small business website design and web development with a conversion-focused, mobile-first approach.",
       "founder": {
         "@type": "Person",
         "name": "Justice Mubayiwa"
@@ -72,12 +61,14 @@
   </script>
   <style>
     :root {
-      --brand-start: #0891b2;
-      --brand-end: #1d4ed8;
+      --brand-start: #0284c7;
+      --brand-end: #1e40af;
       --brand-ink: #0f172a;
-      --brand-glow: rgba(37, 99, 235, 0.18);
-      --glow-a: rgba(14, 165, 233, 0.2);
-      --glow-b: rgba(30, 64, 175, 0.16);
+      --brand-glow: rgba(30, 64, 175, 0.18);
+      --glow-a: rgba(14, 165, 233, 0.16);
+      --glow-b: rgba(30, 64, 175, 0.14);
+      --surface-soft: #f8fafc;
+      --surface-strong: #f1f5f9;
     }
     body.site-bg {
       line-height: 1.6;
@@ -96,6 +87,17 @@
     main > section:not(#top) {
       content-visibility: auto;
       contain-intrinsic-size: 1px 840px;
+      position: relative;
+    }
+    main > section:not(#top)::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(2, 132, 199, 0.18), rgba(30, 64, 175, 0.08), transparent 70%);
+      pointer-events: none;
     }
     main .text-xs {
       line-height: 1.45;
@@ -124,6 +126,12 @@
       background-size: 44px 44px;
       mask-image: radial-gradient(circle at center, black 28%, transparent 82%);
       opacity: 0.32;
+    }
+    .hero-eyebrow {
+      border: 1px solid rgba(186, 230, 253, 0.36);
+      background: linear-gradient(120deg, rgba(255, 255, 255, 0.12), rgba(148, 163, 184, 0.1));
+      box-shadow: 0 8px 20px -16px rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(5px);
     }
     .hero-orb {
       position: absolute;
@@ -156,9 +164,10 @@
       display: block;
       width: fit-content;
       font-family: Sora, Manrope, ui-sans-serif, system-ui;
-      font-weight: 700;
+      font-weight: 800;
       color: #0f172a;
       letter-spacing: 0.01em;
+      line-height: 1.1;
     }
     main section h2::after {
       content: "";
@@ -179,7 +188,7 @@
     .interactive-card {
       position: relative;
       overflow: hidden;
-      transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+      transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease, background-color 220ms ease;
       will-change: transform;
     }
     .interactive-card::before {
@@ -195,12 +204,96 @@
     @media (hover: hover) {
       .interactive-card:hover {
         transform: translateY(-4px);
-        box-shadow: 0 16px 32px -22px rgba(2, 6, 23, 0.55);
+        box-shadow: 0 18px 34px -22px rgba(2, 6, 23, 0.5);
         border-color: #cbd5e1;
+        background-color: #ffffff;
       }
       .interactive-card:hover::before {
         opacity: 1;
       }
+      .hero-asset-card:hover {
+        transform: translateY(-5px);
+        border-color: rgba(186, 230, 253, 0.58);
+        background: linear-gradient(155deg, rgba(255, 255, 255, 0.14), rgba(30, 64, 175, 0.2));
+        box-shadow: 0 24px 32px -22px rgba(15, 23, 42, 0.78);
+      }
+    }
+    .hero-asset-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.22);
+      transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease, background 220ms ease;
+    }
+    .hero-asset-card::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 45%;
+      background: linear-gradient(180deg, transparent, rgba(14, 165, 233, 0.12));
+      opacity: 0.38;
+      pointer-events: none;
+      transition: opacity 220ms ease;
+    }
+    .hero-asset-card:hover::after {
+      opacity: 0.62;
+    }
+    .hero-assets-grid {
+      display: grid;
+      gap: 0.85rem;
+      grid-template-columns: 1fr;
+    }
+    .feature-icon {
+      margin-top: 0.1rem;
+      display: inline-flex;
+      height: 2.35rem;
+      width: 2.35rem;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0.72rem;
+      border: 0;
+      background: rgba(255, 255, 255, 0.12);
+      box-shadow: none;
+    }
+    .hero-diagram-card {
+      border: 1px solid rgba(191, 219, 254, 0.28);
+      background: linear-gradient(160deg, rgba(15, 23, 42, 0.52), rgba(30, 64, 175, 0.24));
+    }
+    .hero-diagram {
+      width: 100%;
+      border-radius: 0.85rem;
+      border: 1px solid rgba(191, 219, 254, 0.2);
+      background: linear-gradient(180deg, rgba(15, 23, 42, 0.45), rgba(15, 23, 42, 0.3));
+      padding: 0.55rem;
+      overflow: hidden;
+    }
+    .hero-diagram .node {
+      fill: rgba(15, 23, 42, 0.92);
+      stroke: rgba(147, 197, 253, 0.74);
+      stroke-width: 1.2;
+    }
+    .hero-diagram .node-core {
+      fill: url(#heroNodeGrad);
+    }
+    .hero-diagram .path {
+      stroke: rgba(147, 197, 253, 0.62);
+      stroke-width: 2.1;
+      fill: none;
+      stroke-linecap: round;
+      stroke-dasharray: 4 7;
+      animation: flowDash 5.5s linear infinite;
+    }
+    .hero-diagram .path.alt {
+      animation-duration: 6.8s;
+      animation-direction: reverse;
+      opacity: 0.82;
+    }
+    .hero-diagram text {
+      font-family: Sora, Manrope, ui-sans-serif, system-ui;
+      fill: #dbeafe;
+      font-size: 9px;
+      letter-spacing: 0.02em;
+    }
+    @keyframes flowDash {
+      to { stroke-dashoffset: -46; }
     }
     .cta-primary {
       position: relative;
@@ -241,6 +334,31 @@
       box-shadow: 0 12px 28px -14px rgba(2, 6, 23, 0.75);
       border: 1px solid rgba(255, 255, 255, 0.35);
     }
+    .hero-cta-wrap {
+      width: fit-content;
+      border: 0;
+      background: transparent;
+      border-radius: 0.9rem;
+      padding: 0;
+      box-shadow: none;
+    }
+    .hero-signal-row span {
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 9999px;
+      padding: 0.24rem 0.58rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.32rem;
+      backdrop-filter: blur(4px);
+    }
+    .hero-signal-row span::before {
+      content: "";
+      width: 0.35rem;
+      height: 0.35rem;
+      border-radius: 9999px;
+      background: linear-gradient(135deg, #7dd3fc, #3b82f6);
+    }
     .accent-text {
       background: linear-gradient(90deg, #bae6fd, #60a5fa);
       -webkit-background-clip: text;
@@ -280,11 +398,11 @@
       box-shadow: 0 8px 14px -12px rgba(15, 23, 42, 0.45);
     }
     .section-kicker {
-      font-size: 0.79rem;
-      font-weight: 700;
-      letter-spacing: 0.11em;
+      font-size: 0.77rem;
+      font-weight: 800;
+      letter-spacing: 0.13em;
       text-transform: uppercase;
-      color: #0369a1;
+      color: #075985;
       position: relative;
       display: inline-flex;
       align-items: center;
@@ -297,6 +415,11 @@
       border-radius: 9999px;
       background: linear-gradient(135deg, var(--brand-start), var(--brand-end));
       box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.15);
+      animation: pulseDot 3.8s ease-in-out infinite;
+    }
+    @keyframes pulseDot {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.08); opacity: 0.85; }
     }
     .section-intro {
       max-width: 62ch;
@@ -314,7 +437,8 @@
     }
     .panel-muted {
       border: 1px solid #e2e8f0;
-      background: #f8fafc;
+      background: linear-gradient(180deg, var(--surface-soft) 0%, var(--surface-strong) 100%);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
     }
     .helper-note {
       font-size: 0.82rem;
@@ -324,11 +448,47 @@
     .case-card p {
       line-height: 1.55;
     }
+    .faq-item {
+      border: 1px solid #e2e8f0;
+      border-radius: 0.9rem;
+      background: #ffffff;
+      padding: 0.75rem 0.9rem;
+      transition: border-color 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+    }
+    .faq-item[open] {
+      border-color: #c7d2fe;
+      background: #f8fafc;
+      box-shadow: 0 10px 20px -18px rgba(30, 64, 175, 0.55);
+    }
+    .faq-item summary {
+      cursor: pointer;
+      font-weight: 600;
+      color: #0f172a;
+      list-style: none;
+    }
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+    .faq-item summary::after {
+      content: "+";
+      float: right;
+      color: #64748b;
+      font-weight: 700;
+    }
+    .faq-item[open] summary::after {
+      content: "-";
+    }
+    .faq-item p {
+      margin-top: 0.5rem;
+      color: #475569;
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
     .trusted-wrap {
       background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
       border-radius: 1.25rem;
       padding: 1.25rem;
-      box-shadow: 0 14px 34px -28px rgba(15, 23, 42, 0.45);
+      box-shadow: 0 16px 34px -28px rgba(15, 23, 42, 0.42);
       position: relative;
       overflow: hidden;
     }
@@ -415,7 +575,18 @@
         font-size: 2rem !important;
         line-height: 1.1 !important;
       }
-      #top .lg\:justify-self-end .space-y-4 article:nth-child(n+2) {
+      #top .hero-cta-wrap {
+        border: 0;
+        background: transparent;
+        padding: 0;
+      }
+      #top .hero-signal-row {
+        gap: 0.42rem;
+      }
+      #top .hero-signal-row span {
+        font-size: 0.7rem;
+      }
+      #top .hero-assets-grid article:nth-child(n+2) {
         display: none;
       }
       #trusted,
@@ -452,21 +623,79 @@
       .rounded-3xl.border.border-slate-200.bg-white {
         padding: 1.1rem !important;
       }
+      #about .about-layout {
+        gap: 1.25rem;
+      }
+      #about .about-profile {
+        display: flex;
+        width: 100%;
+        border-radius: 0.9rem;
+        padding: 0.7rem 0.85rem;
+      }
+      #about .about-profile img {
+        height: 3.15rem;
+        width: 3.15rem;
+      }
+      #about .about-copy {
+        font-size: 0.97rem;
+        line-height: 1.62;
+      }
+      #about .about-fit {
+        gap: 0.65rem;
+      }
+      #about .about-fit > div {
+        padding: 0.85rem;
+      }
+      #about .about-why {
+        padding: 1rem;
+      }
+      #about .about-why .benefit-list li {
+        line-height: 1.42;
+      }
+      #about .about-why .benefit-list {
+        margin-top: 0.75rem;
+      }
+      #work .case-card {
+        padding: 1rem;
+      }
+      #work .case-card .meta-chip {
+        font-size: 0.69rem;
+        padding: 0.2rem 0.5rem;
+      }
+      #work .case-card .project-meta {
+        gap: 0.35rem;
+      }
+      #work .case-card .project-scope {
+        display: none;
+      }
+      #work .case-card .project-detail {
+        margin-top: 0.5rem;
+        font-size: 0.88rem;
+        line-height: 1.5;
+      }
+      #work .case-card .project-link {
+        margin-top: 0.65rem;
+      }
     }
     .reveal {
       opacity: 0;
       transform: translateY(14px);
-      transition: opacity 420ms ease, transform 420ms ease;
+      transition: opacity 420ms ease, transform 420ms ease, filter 420ms ease;
+      filter: saturate(0.92);
     }
     .reveal.in-view {
       opacity: 1;
       transform: translateY(0);
+      filter: saturate(1);
     }
     @media (prefers-reduced-motion: reduce) {
-      .hero-orb, .interactive-card, .reveal {
+      .hero-orb, .interactive-card, .reveal, .section-kicker::before {
         animation: none !important;
         transition: none !important;
         transform: none !important;
+      }
+      .hero-diagram .path {
+        animation: none !important;
       }
       .reveal {
         opacity: 1;
@@ -481,9 +710,9 @@
     <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
       <a href="#top" class="brand-mark text-lg font-semibold tracking-tight focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 rounded-md">Craytivo</a>
       <nav class="hidden items-center gap-6 md:flex" aria-label="Primary">
-        <a href="#services" class="text-sm font-medium text-slate-700 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 rounded-md">Services</a>
+        <a href="#services" aria-label="View small business website design and web development services" class="text-sm font-medium text-slate-700 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 rounded-md">Services</a>
         <a href="#process" class="text-sm font-medium text-slate-700 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 rounded-md">Process</a>
-        <a href="#work" class="text-sm font-medium text-slate-700 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 rounded-md">Work</a>
+        <a href="#work" aria-label="View selected small business web design and website redesign work" class="text-sm font-medium text-slate-700 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 rounded-md">Work</a>
         <a href="#testimonials" class="text-sm font-medium text-slate-700 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 rounded-md">Testimonials</a>
         <a href="#about" class="text-sm font-medium text-slate-700 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 rounded-md">About</a>
         <a href="#contact" aria-label="Jump to contact section to book a free 15-minute call" class="cta-primary rounded-md px-4 py-2 text-sm font-semibold shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">Book Free 15-Min Call</a>
@@ -496,9 +725,9 @@
     </div>
     <nav id="mobileMenu" class="hidden max-h-[70vh] overflow-y-auto border-t border-slate-200 bg-white px-4 py-3 md:hidden" aria-label="Mobile">
       <div class="flex flex-col gap-3">
-        <a href="#services" class="mobile-link rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">Services</a>
+        <a href="#services" aria-label="View small business website design and web development services" class="mobile-link rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">Services</a>
         <a href="#process" class="mobile-link rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">Process</a>
-        <a href="#work" class="mobile-link rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">Work</a>
+        <a href="#work" aria-label="View selected small business web design and website redesign work" class="mobile-link rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">Work</a>
         <a href="#testimonials" class="mobile-link rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">Testimonials</a>
         <a href="#about" class="mobile-link rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">About</a>
         <a href="#contact" aria-label="Jump to contact section to book a free 15-minute call" class="mobile-link cta-primary rounded-md px-3 py-2 text-center text-sm font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">Book Free 15-Min Call</a>
@@ -514,20 +743,25 @@
       <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-10">
           <div class="max-w-3xl">
-            <p class="mb-4 inline-flex rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide">Justice Mubayiwa &bull; Craytivo</p>
-            <h1 class="font-display text-3xl font-bold leading-[1.08] tracking-tight sm:max-w-[20ch] sm:text-5xl">Websites for small and medium businesses that <span class="accent-text">turn visits into booked calls</span>.</h1>
+            <p class="hero-eyebrow mb-4 inline-flex rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide">Justice Mubayiwa &bull; Craytivo</p>
+            <h1 class="font-display text-3xl font-bold leading-[1.08] tracking-tight sm:max-w-[20ch] sm:text-5xl">Small business website design and web development that <span class="accent-text">turns visits into booked calls</span>.</h1>
             <p class="mt-5 max-w-[62ch] text-base text-slate-200 leading-relaxed sm:text-lg">Mobile-first, SEO-ready, and conversion-focused builds, with some projects launching in as little as 4 days.</p>
-            <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <a href="#contact" class="cta-hero rounded-md px-5 py-3 text-center text-sm font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white sm:text-left">Get Free 15-Min Plan</a>
-              <a href="#services" class="rounded-md border border-white/25 px-5 py-3 text-center text-sm font-semibold text-slate-200 hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white sm:text-left">See Services & Pricing</a>
+            <div class="hero-cta-wrap mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <a href="#contact" aria-label="Book a free website strategy call for your small business website" class="cta-hero rounded-md px-5 py-3 text-center text-sm font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white sm:text-left">Get Free 15-Min Plan</a>
+              <a href="#services" aria-label="See small business website design services and pricing" class="rounded-md border border-white/25 px-5 py-3 text-center text-sm font-semibold text-slate-200 hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white sm:text-left">See Services & Pricing</a>
+            </div>
+            <div class="hero-signal-row mt-4 flex flex-wrap gap-2 text-xs font-semibold text-slate-100">
+              <span>Mobile-first</span>
+              <span>SEO-ready</span>
+              <span>Conversion-focused</span>
             </div>
             <p class="mt-4 text-sm text-slate-200">Free 15-min call &bull; Quick goals review &bull; Timeline + quote range &bull; Reply within 1 business day</p>
           </div>
           <div class="lg:justify-self-end lg:self-start lg:pt-10">
-            <div class="mx-auto max-w-md space-y-4 lg:max-w-sm">
-              <article class="rounded-2xl border border-white/20 bg-white/10 p-5 shadow-lg backdrop-blur interactive-card">
+            <div class="hero-assets-grid mx-auto max-w-md lg:max-w-[34rem]">
+              <article class="hero-asset-card rounded-2xl border border-white/20 bg-white/10 p-5 shadow-lg backdrop-blur interactive-card">
                 <div class="flex items-start gap-3">
-                  <span class="mt-0.5 inline-flex h-9 w-9 items-center justify-center rounded-lg bg-white/15" aria-hidden="true">
+                  <span class="feature-icon" aria-hidden="true">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2" />
                       <circle cx="12" cy="12" r="9" />
@@ -539,9 +773,9 @@
                   </div>
                 </div>
               </article>
-              <article class="rounded-2xl border border-white/20 bg-white/10 p-5 shadow-lg backdrop-blur interactive-card">
+              <article class="hero-asset-card rounded-2xl border border-white/20 bg-white/10 p-5 shadow-lg backdrop-blur interactive-card">
                 <div class="flex items-start gap-3">
-                  <span class="mt-0.5 inline-flex h-9 w-9 items-center justify-center rounded-lg bg-white/15" aria-hidden="true">
+                  <span class="feature-icon" aria-hidden="true">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M4 19h16M7 16l2-2 2 2 4-4 2 2" />
                     </svg>
@@ -550,6 +784,30 @@
                     <h3 class="text-sm font-semibold text-white">SEO-ready structure</h3>
                     <p class="mt-1 text-sm text-slate-200">Clean technical foundations that support long-term search visibility.</p>
                   </div>
+                </div>
+              </article>
+              <article class="hero-asset-card hero-diagram-card rounded-2xl p-4 shadow-lg backdrop-blur interactive-card" aria-label="Visual conversion flow from visitor to booked call">
+                <p class="text-xs font-semibold uppercase tracking-wide text-sky-100/90">Craytivo Conversion Flow</p>
+                <div class="hero-diagram mt-3">
+                  <svg viewBox="0 0 300 122" role="img" aria-label="Diagram showing website visitors moving through trust signals and clear pages into booked calls">
+                    <defs>
+                      <linearGradient id="heroNodeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#0ea5e9" />
+                        <stop offset="100%" stop-color="#2563eb" />
+                      </linearGradient>
+                    </defs>
+                    <path class="path" d="M46 60 C86 26, 118 26, 150 60" />
+                    <path class="path alt" d="M150 60 C184 92, 220 92, 254 60" />
+                    <circle class="node" cx="46" cy="60" r="23" />
+                    <circle class="node-core" cx="46" cy="60" r="8.5" />
+                    <circle class="node" cx="150" cy="60" r="23" />
+                    <circle class="node-core" cx="150" cy="60" r="8.5" />
+                    <circle class="node" cx="254" cy="60" r="23" />
+                    <circle class="node-core" cx="254" cy="60" r="8.5" />
+                    <text x="46" y="98" text-anchor="middle">Visitor</text>
+                    <text x="150" y="98" text-anchor="middle">Trust + Clarity</text>
+                    <text x="254" y="98" text-anchor="middle">Booked Call</text>
+                  </svg>
                 </div>
               </article>
             </div>
@@ -563,51 +821,51 @@
         <div class="trusted-wrap">
           <p class="section-kicker text-center">Trusted By</p>
           <h3 class="mt-2 text-center text-2xl font-bold tracking-tight text-slate-900">Brands I Have Worked With</h3>
-          <p class="mx-auto mt-3 max-w-2xl text-center text-sm text-slate-600">Selected client brands across counselling, retail, media, and office services.</p>
+          <p class="mx-auto mt-3 max-w-2xl text-center text-sm text-slate-600">17 projects delivered across counselling, retail, media, and office services.</p>
           <div class="trusted-grid mt-6">
             <div class="logo-tile">
               <picture>
                 <source type="image/webp" srcset="assets/logos/craytivo.webp" />
-                <img src="assets/logos/craytivo.png" alt="Craytivo logo" loading="lazy" decoding="async" width="180" height="60" sizes="(max-width: 639px) 42vw, (max-width: 1023px) 23vw, 180px" />
+                <img src="assets/logos/craytivo.png" alt="Craytivo small business web developer logo" loading="lazy" decoding="async" width="180" height="60" sizes="(max-width: 639px) 42vw, (max-width: 1023px) 23vw, 180px" />
               </picture>
             </div>
             <div class="logo-tile">
               <picture>
                 <source type="image/webp" srcset="assets/logos/freedom-life-church.webp" />
-                <img src="assets/logos/freedom-life-church.png" alt="Freedom Life Church logo" loading="lazy" decoding="async" width="180" height="60" sizes="(max-width: 639px) 42vw, (max-width: 1023px) 23vw, 180px" />
+                <img src="assets/logos/freedom-life-church.png" alt="Freedom Life Church client logo" loading="lazy" decoding="async" width="180" height="60" sizes="(max-width: 639px) 42vw, (max-width: 1023px) 23vw, 180px" />
               </picture>
             </div>
             <div class="logo-tile">
               <picture>
                 <source type="image/webp" srcset="assets/logos/soul-care.webp" />
-                <img src="assets/logos/soul-care.png" alt="Soul Care logo" loading="lazy" decoding="async" width="180" height="60" sizes="(max-width: 639px) 42vw, (max-width: 1023px) 23vw, 180px" />
+                <img src="assets/logos/soul-care.png" alt="Soul Care client website logo" loading="lazy" decoding="async" width="180" height="60" sizes="(max-width: 639px) 42vw, (max-width: 1023px) 23vw, 180px" />
               </picture>
             </div>
             <div class="logo-tile">
-              <img src="assets/logos/icare.webp" alt="ICare logo" loading="lazy" decoding="async" width="180" height="60" />
+              <img src="assets/logos/icare.webp" alt="ICare client logo" loading="lazy" decoding="async" width="180" height="60" />
             </div>
             <div class="logo-tile">
               <picture>
                 <source type="image/webp" srcset="assets/logos/marina-homes.webp" />
-                <img src="assets/logos/marina-homes.png" alt="Marina Homes logo" loading="lazy" decoding="async" width="180" height="60" sizes="(max-width: 639px) 42vw, (max-width: 1023px) 23vw, 180px" />
+                <img src="assets/logos/marina-homes.png" alt="Marina Homes client logo" loading="lazy" decoding="async" width="180" height="60" sizes="(max-width: 639px) 42vw, (max-width: 1023px) 23vw, 180px" />
               </picture>
             </div>
             <div class="logo-tile">
               <picture>
                 <source type="image/webp" srcset="assets/logos/ot-vibez.webp" />
-                <img src="assets/logos/ot-vibez.png" alt="OT Vibez logo" loading="lazy" decoding="async" width="180" height="60" sizes="(max-width: 639px) 42vw, (max-width: 1023px) 23vw, 180px" />
+                <img src="assets/logos/ot-vibez.png" alt="OT Vibez Studio client website logo" loading="lazy" decoding="async" width="180" height="60" sizes="(max-width: 639px) 42vw, (max-width: 1023px) 23vw, 180px" />
               </picture>
             </div>
             <div class="logo-tile">
               <picture>
                 <source type="image/webp" srcset="assets/logos/purposepath.webp" />
-                <img src="assets/logos/purposepath.jpeg" alt="Purpose Path logo" loading="lazy" decoding="async" width="180" height="60" sizes="(max-width: 639px) 42vw, (max-width: 1023px) 23vw, 180px" />
+                <img src="assets/logos/purposepath.jpeg" alt="Purpose Path client logo" loading="lazy" decoding="async" width="180" height="60" sizes="(max-width: 639px) 42vw, (max-width: 1023px) 23vw, 180px" />
               </picture>
             </div>
             <div class="logo-tile">
               <picture>
                 <source type="image/webp" srcset="assets/logos/zemlar.webp" />
-                <img src="assets/logos/zemlar.png" alt="Zemlar logo" loading="lazy" decoding="async" width="180" height="60" sizes="(max-width: 639px) 42vw, (max-width: 1023px) 23vw, 180px" />
+                <img src="assets/logos/zemlar.png" alt="ZEMLAR Offices client website logo" loading="lazy" decoding="async" width="180" height="60" sizes="(max-width: 639px) 42vw, (max-width: 1023px) 23vw, 180px" />
               </picture>
             </div>
           </div>
@@ -621,7 +879,7 @@
       <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <p class="section-kicker">What I Build</p>
         <h2 class="text-3xl font-bold tracking-tight">Services</h2>
-        <p class="section-intro mt-3">Service packages designed to increase inquiries, reduce friction, and support steady growth.</p>
+        <p class="section-intro mt-3">Small business website packages designed to increase inquiries, reduce friction, and support steady growth.</p>
         <div class="mt-4 flex flex-wrap gap-2">
           <span class="meta-chip">Conversion-focused</span>
           <span class="meta-chip">SEO-ready</span>
@@ -630,40 +888,79 @@
         <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm interactive-card">
             <h3 class="text-lg font-semibold">Landing Pages</h3>
-            <p class="mt-2 text-sm text-slate-600">Focused pages for campaigns, offers, and bookings.</p>
+            <p class="mt-2 text-sm text-slate-600">Turn campaign traffic into more inquiries and bookings.</p>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="meta-chip">Starter fit</span>
+              <span class="meta-chip">Timeline: 4-7 days</span>
+            </div>
+            <p class="mt-2 text-xs text-slate-600">Best for: targeted offers and launch campaigns.</p>
           </article>
-          <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm interactive-card">
+          <article class="rounded-2xl border border-sky-200 bg-white p-6 shadow-sm interactive-card">
             <h3 class="text-lg font-semibold">Business Websites</h3>
-            <p class="mt-2 text-sm text-slate-600">Credible websites that explain your offer clearly.</p>
+            <p class="mt-2 text-sm text-slate-600">Build trust fast and convert more visitors into qualified leads.</p>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="meta-chip">Most requested</span>
+              <span class="meta-chip">Growth fit</span>
+              <span class="meta-chip">Timeline: 1-3 weeks</span>
+            </div>
+            <p class="mt-2 text-xs text-slate-600">Best for: small teams needing a stronger online presence.</p>
           </article>
           <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm interactive-card">
             <h3 class="text-lg font-semibold">E-commerce Setup</h3>
-            <p class="mt-2 text-sm text-slate-600">Store setup optimized for trust and smoother checkout.</p>
+            <p class="mt-2 text-sm text-slate-600">Improve product trust and reduce checkout friction.</p>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="meta-chip">Growth fit</span>
+              <span class="meta-chip">Pro fit</span>
+              <span class="meta-chip">Timeline: 2-4 weeks</span>
+            </div>
+            <p class="mt-2 text-xs text-slate-600">Best for: businesses selling products or paid services online.</p>
           </article>
           <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm interactive-card">
             <h3 class="text-lg font-semibold">Performance & SEO</h3>
-            <p class="mt-2 text-sm text-slate-600">Speed, structure, and SEO improvements that matter.</p>
+            <p class="mt-2 text-sm text-slate-600">Get faster pages and cleaner SEO foundations for search growth.</p>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="meta-chip">Starter fit</span>
+              <span class="meta-chip">Growth fit</span>
+              <span class="meta-chip">Timeline: 3-10 days</span>
+            </div>
+            <p class="mt-2 text-xs text-slate-600">Best for: improving existing sites without full redesign.</p>
           </article>
           <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:col-span-2 lg:col-span-1 interactive-card">
             <h3 class="text-lg font-semibold">Maintenance & Support</h3>
-            <p class="mt-2 text-sm text-slate-600">Ongoing updates, fixes, and performance support.</p>
+            <p class="mt-2 text-sm text-slate-600">Keep your site stable, updated, and conversion-ready.</p>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="meta-chip">Starter fit</span>
+              <span class="meta-chip">Timeline: Ongoing</span>
+            </div>
+            <p class="mt-2 text-xs text-slate-600">Best for: teams that need reliable ongoing technical support.</p>
           </article>
         </div>
         <div class="mt-8 rounded-2xl border border-slate-200 bg-slate-50 p-5">
           <h3 class="text-lg font-semibold">Pricing Snapshot</h3>
           <p class="mt-2 text-sm text-slate-700">Clear starting ranges to help you plan. Final quote depends on scope and timeline.</p>
           <div class="mt-4 grid gap-3 sm:grid-cols-3">
-            <p class="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm"><span class="font-semibold">Starter</span><br />Starting at $450</p>
-            <p class="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm"><span class="font-semibold">Growth</span><br />Starting at $900</p>
-            <p class="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm"><span class="font-semibold">Pro</span><br />Starting at $1,500</p>
+            <article class="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm">
+              <p class="font-semibold text-slate-900">Starter</p>
+              <p class="mt-1 text-lg font-bold text-slate-900">Starting at $450</p>
+              <p class="mt-1 text-xs text-slate-600">Best for: focused pages and smaller builds.</p>
+            </article>
+            <article class="rounded-xl border border-sky-200 bg-white px-4 py-3 text-sm">
+              <p class="font-semibold text-slate-900">Growth</p>
+              <p class="mt-1 text-lg font-bold text-slate-900">Starting at $900</p>
+              <p class="mt-1 text-xs text-slate-600">Best for: full business websites and stronger conversion flow.</p>
+            </article>
+            <article class="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm">
+              <p class="font-semibold text-slate-900">Pro</p>
+              <p class="mt-1 text-lg font-bold text-slate-900">Starting at $1,500</p>
+              <p class="mt-1 text-xs text-slate-600">Best for: advanced scope, e-commerce, and deeper optimization.</p>
+            </article>
           </div>
           <p class="mt-3 text-xs text-slate-600">Minimum engagement for one-off support starts at $150.</p>
-          <p class="mt-2 text-xs text-slate-600">Package pricing applies to full website builds; the $150 minimum applies to smaller one-off support tasks.</p>
+          <p class="mt-1 text-xs text-slate-600">Package pricing applies to full website builds; one-off tasks are scoped separately.</p>
         </div>
         <div class="panel-muted mt-6 rounded-2xl p-5 shadow-sm">
           <a href="#contact" aria-label="Go to contact form to confirm your best-fit package" class="cta-secondary inline-flex rounded-md px-5 py-3 text-sm font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">Check Your Best-Fit Package</a>
-          <p class="helper-note mt-2">Free 15-min call &bull; No pressure &bull; Reply within 1 business day</p>
-          <p class="helper-note mt-1">What happens next: You get a same-day or next-business-day reply with a package recommendation and next steps.</p>
+          <p class="helper-note mt-2">Share your goals and current site (if any), then get a package recommendation and next steps within 1 business day.</p>
         </div>
       </div>
     </section>
@@ -675,18 +972,26 @@
         <p class="section-intro mt-3">A simple process that keeps projects moving quickly while protecting quality and clarity.</p>
         <div class="mt-10 grid gap-6 md:grid-cols-3">
           <article class="rounded-2xl bg-white p-6 shadow-sm interactive-card">
-            <p class="text-sm font-semibold text-sky-700">1. Strategy</p>
+            <p class="text-sm font-semibold text-sky-700">1. Strategy (Day 1-2)</p>
             <p class="mt-2 text-sm text-slate-600">Define goals, audience, and offer before design starts.</p>
+            <p class="mt-2 text-xs text-slate-600"><span class="font-semibold text-slate-700">Deliverable:</span> Page map + scope summary.</p>
+            <p class="mt-1 text-xs text-slate-600"><span class="font-semibold text-slate-700">Need from you:</span> Brief, goals, and references.</p>
           </article>
           <article class="rounded-2xl bg-white p-6 shadow-sm interactive-card">
-            <p class="text-sm font-semibold text-sky-700">2. Build</p>
+            <p class="text-sm font-semibold text-sky-700">2. Build (Day 2-10)</p>
             <p class="mt-2 text-sm text-slate-600">Build a fast, responsive site with clean code.</p>
+            <p class="mt-2 text-xs text-slate-600"><span class="font-semibold text-slate-700">Deliverable:</span> Staging link + progress updates.</p>
+            <p class="mt-1 text-xs text-slate-600"><span class="font-semibold text-slate-700">Need from you:</span> Timely feedback in review windows.</p>
           </article>
           <article class="rounded-2xl bg-white p-6 shadow-sm interactive-card">
-            <p class="text-sm font-semibold text-sky-700">3. Launch & Optimize</p>
+            <p class="text-sm font-semibold text-sky-700">3. Launch & Optimize (Final 1-2 days)</p>
             <p class="mt-2 text-sm text-slate-600">Launch, measure, and improve based on real behavior.</p>
+            <p class="mt-2 text-xs text-slate-600"><span class="font-semibold text-slate-700">Deliverable:</span> QA checklist + handoff notes.</p>
+            <p class="mt-1 text-xs text-slate-600"><span class="font-semibold text-slate-700">Need from you:</span> Final approvals and launch sign-off.</p>
           </article>
         </div>
+        <p class="mt-4 text-sm text-slate-600">Typical project rhythm: Kickoff &rarr; first draft &rarr; revisions &rarr; launch.</p>
+        <p class="mt-2 text-sm text-slate-600">Not sure where your project fits? I will map your best starting step in the free call.</p>
       </div>
     </section>
 
@@ -694,46 +999,67 @@
       <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <p class="section-kicker">Proof</p>
         <h2 class="text-3xl font-bold tracking-tight">Selected Work</h2>
-        <p class="section-intro mt-3">Examples of practical improvements focused on conversion, trust, and cleaner customer journeys.</p>
+        <p class="section-intro mt-3">Small business web design and website redesign examples focused on conversion, trust, and cleaner customer journeys.</p>
         <div class="mt-10 grid gap-6 md:grid-cols-3">
           <article class="case-card rounded-2xl border border-slate-200 bg-white p-6 shadow-sm interactive-card">
             <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Project Type: Multi-Page Counselling Practice Website</p>
             <p class="mt-3 text-sm"><strong>Client:</strong> Soul Care Christian Counselling</p>
-            <div class="mt-3 flex flex-wrap gap-2">
+            <div class="project-meta mt-3 flex flex-wrap gap-2">
               <span class="meta-chip">Industry: Counselling</span>
               <span class="meta-chip">Timeline: Fast-turnaround</span>
               <span class="meta-chip">Platform: WordPress</span>
+              <span class="meta-chip">Delivered: 2025</span>
             </div>
-            <p class="mt-4 text-sm leading-relaxed"><strong>Challenge:</strong> Needed clearer trust signals and easier access to free consultation booking for a multi-clinician practice.</p>
-            <p class="mt-2 text-sm leading-relaxed"><strong>My role:</strong> I led this build from the ground up, owning discovery, page strategy, UX/UI, development, content layout, and go-live execution.</p>
-            <p class="mt-2 text-sm leading-relaxed"><strong>Outcome:</strong> 3 clear service pathways, stronger team credibility presentation, and a lower-friction consultation journey.</p>
-            <p class="mt-4 text-sm"><a href="https://thesoulcarecounsellor.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit live site: Soul Care Christian Counselling" class="underline underline-offset-4 hover:text-slate-900">Visit live site</a> &bull; <a href="#contact" class="underline underline-offset-4 hover:text-slate-900">Request full case study</a></p>
+            <div class="project-scope mt-2 flex flex-wrap gap-2">
+              <span class="meta-chip">Scope: Strategy</span>
+              <span class="meta-chip">Scope: UX/UI</span>
+              <span class="meta-chip">Scope: Build</span>
+            </div>
+            <p class="project-detail mt-4 text-sm leading-relaxed"><strong>Challenge:</strong> Needed clearer trust signals and easier access to free consultation booking for a multi-clinician practice.</p>
+            <p class="project-detail mt-2 text-sm leading-relaxed"><strong>My role:</strong> End-to-end lead across discovery, page strategy, UX/UI, build, and launch.</p>
+            <p class="project-detail mt-2 text-sm leading-relaxed"><strong>Outcome:</strong> 3 clear service pathways, stronger team credibility, and lower-friction consultation flow.</p>
+            <p class="project-detail mt-2 text-sm leading-relaxed"><strong>Result:</strong> Higher consultation intent through clearer service paths and booking flow.</p>
+            <p class="project-link mt-4 text-sm"><a href="https://thesoulcarecounsellor.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit live site: Soul Care Christian Counselling" class="underline underline-offset-4 hover:text-slate-900">Visit live site</a></p>
           </article>
           <article class="case-card rounded-2xl border border-slate-200 bg-white p-6 shadow-sm interactive-card">
             <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Project Type: Creative Studio Website</p>
             <p class="mt-3 text-sm"><strong>Client:</strong> OT Vibez Studio</p>
-            <div class="mt-3 flex flex-wrap gap-2">
+            <div class="project-meta mt-3 flex flex-wrap gap-2">
               <span class="meta-chip">Industry: Creative Studio</span>
               <span class="meta-chip">Timeline: Fast-turnaround</span>
               <span class="meta-chip">Platform: CMS Website</span>
+              <span class="meta-chip">Delivered: 2025</span>
             </div>
-            <p class="mt-4 text-sm leading-relaxed"><strong>Challenge:</strong> Needed an online presence that matched studio quality and made inquiries easier.</p>
-            <p class="mt-2 text-sm leading-relaxed"><strong>My role:</strong> Built entirely from scratch with full ownership across planning, brand-aligned interface design, development, on-page structure, and launch.</p>
-            <p class="mt-2 text-sm leading-relaxed"><strong>Outcome:</strong> 2-click navigation to inquiry actions, stronger visual hierarchy, and clearer brand-to-booking flow.</p>
-            <p class="mt-4 text-sm"><a href="https://otvibez.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit live site: OT Vibez Studio" class="underline underline-offset-4 hover:text-slate-900">Visit live site</a> &bull; <a href="#contact" class="underline underline-offset-4 hover:text-slate-900">Request full case study</a></p>
+            <div class="project-scope mt-2 flex flex-wrap gap-2">
+              <span class="meta-chip">Scope: Planning</span>
+              <span class="meta-chip">Scope: Design</span>
+              <span class="meta-chip">Scope: Development</span>
+            </div>
+            <p class="project-detail mt-4 text-sm leading-relaxed"><strong>Challenge:</strong> Needed an online presence that matched studio quality and made inquiries easier.</p>
+            <p class="project-detail mt-2 text-sm leading-relaxed"><strong>My role:</strong> Full ownership from planning and interface design to development and go-live.</p>
+            <p class="project-detail mt-2 text-sm leading-relaxed"><strong>Outcome:</strong> 2-click route to inquiry actions with clearer brand-to-booking flow.</p>
+            <p class="project-detail mt-2 text-sm leading-relaxed"><strong>Result:</strong> Stronger inquiry intent from cleaner navigation and clearer conversion paths.</p>
+            <p class="project-link mt-4 text-sm"><a href="https://otvibez.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit live site: OT Vibez Studio" class="underline underline-offset-4 hover:text-slate-900">Visit live site</a></p>
           </article>
           <article class="case-card rounded-2xl border border-slate-200 bg-white p-6 shadow-sm interactive-card">
             <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Project Type: Commercial Office Solutions Website</p>
             <p class="mt-3 text-sm"><strong>Client:</strong> ZEMLAR Offices</p>
-            <div class="mt-3 flex flex-wrap gap-2">
+            <div class="project-meta mt-3 flex flex-wrap gap-2">
               <span class="meta-chip">Industry: Office Solutions</span>
               <span class="meta-chip">Timeline: Rolling updates</span>
               <span class="meta-chip">Platform: WordPress</span>
+              <span class="meta-chip">Delivered: 2023</span>
             </div>
-            <p class="mt-4 text-sm leading-relaxed"><strong>Challenge:</strong> Needed a more credible digital storefront for office products and workspace services.</p>
-            <p class="mt-2 text-sm leading-relaxed"><strong>My role:</strong> Content structure, navigation improvement, and trust-first page architecture.</p>
-            <p class="mt-2 text-sm leading-relaxed"><strong>Outcome:</strong> 4 core offering areas surfaced more clearly, improving browse-to-inquiry clarity for business buyers.</p>
-            <p class="mt-4 text-sm"><a href="https://www.zemlar.ca/" target="_blank" rel="noopener noreferrer" aria-label="Visit live site: ZEMLAR Offices" class="underline underline-offset-4 hover:text-slate-900">Visit live site</a> &bull; <a href="#contact" class="underline underline-offset-4 hover:text-slate-900">Request full case study</a></p>
+            <div class="project-scope mt-2 flex flex-wrap gap-2">
+              <span class="meta-chip">Scope: Content architecture</span>
+              <span class="meta-chip">Scope: Navigation</span>
+              <span class="meta-chip">Scope: Trust UX</span>
+            </div>
+            <p class="project-detail mt-4 text-sm leading-relaxed"><strong>Challenge:</strong> Needed a more credible digital storefront for office products and workspace services.</p>
+            <p class="project-detail mt-2 text-sm leading-relaxed"><strong>My role:</strong> Led information architecture, navigation updates, and trust-first page structure.</p>
+            <p class="project-detail mt-2 text-sm leading-relaxed"><strong>Outcome:</strong> 4 core offerings surfaced clearly, improving browse-to-inquiry clarity.</p>
+            <p class="project-detail mt-2 text-sm leading-relaxed"><strong>Result:</strong> More focused B2B inquiries through clearer offer visibility and site structure.</p>
+            <p class="project-link mt-4 text-sm"><a href="https://www.zemlar.ca/" target="_blank" rel="noopener noreferrer" aria-label="Visit live site: ZEMLAR Offices" class="underline underline-offset-4 hover:text-slate-900">Visit live site</a></p>
           </article>
         </div>
         <div class="mt-8 rounded-xl border border-blue-200 bg-blue-50 p-4 text-sm font-medium text-blue-900">Need deeper detail? Ask for full case studies with scope, process, and outcomes.</div>
@@ -749,15 +1075,20 @@
       <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <p class="section-kicker">Client Feedback</p>
         <h2 class="text-3xl font-bold tracking-tight">Testimonials</h2>
-        <p class="section-intro mt-3">One detailed testimonial plus the outcome patterns clients commonly report after launch.</p>
+        <p class="section-intro mt-3">Real client feedback with practical outcomes and decision-relevant context.</p>
         <div class="mt-10 grid gap-6 lg:grid-cols-3">
           <article class="rounded-2xl bg-white p-6 shadow-sm interactive-card lg:col-span-2">
-            <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Featured testimonial</p>
-            <p class="mt-2 text-sm font-semibold text-slate-900">Zemlar Offices - Daniel Mercer, Marketing Manager</p>
+            <div class="flex flex-wrap items-center gap-2">
+              <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Featured testimonial</p>
+              <span class="meta-chip">Client: ZEMLAR Offices</span>
+              <span class="meta-chip">Role: Marketing Manager</span>
+              <span class="meta-chip">Project year: 2023</span>
+            </div>
+            <p class="mt-3 text-sm font-semibold text-slate-900">Daniel Mercer, Marketing Manager</p>
             <blockquote class="mt-3 border-l-4 border-sky-200 pl-4 text-sm text-slate-700">
               <p class="sm:hidden">"Working with Justice transformed how we present Zemlar online. What started as a need for a more credible digital storefront became a strategic overhaul of how business buyers experience our brand."</p>
               <details class="mt-3 sm:hidden">
-                <summary class="cursor-pointer font-medium text-slate-900 underline underline-offset-4">Read full testimonial</summary>
+                <summary class="cursor-pointer font-medium text-slate-900 underline underline-offset-4">Read full client quote</summary>
                 <p class="mt-3">"He restructured our content, simplified navigation, and built a trust-first page architecture that clearly surfaces our four core service areas. Visitors now understand what we offer within seconds, and that clarity has made a measurable difference.
                 Since the updates, we have seen stronger engagement, improved time on key pages, and more focused inquiries from qualified prospects. The site feels intentional, professional, and aligned with how we actually operate.
                 If you want a developer who thinks beyond design and builds for real business outcomes, Justice delivers."</p>
@@ -767,38 +1098,49 @@
               Since the updates, we have seen stronger engagement, improved time on key pages, and more focused inquiries from qualified prospects. The site feels intentional, professional, and aligned with how we actually operate.
               If you want a developer who thinks beyond design and builds for real business outcomes, Justice delivers."</p>
             </blockquote>
+            <p class="mt-4 text-xs text-slate-500">Quote shared with attribution for portfolio proof.</p>
           </article>
           <aside class="rounded-2xl bg-white p-6 shadow-sm interactive-card">
-            <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Common outcomes</p>
+            <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Why this feedback matters</p>
+            <p class="mt-2 text-sm text-slate-700">This testimonial reflects the same priorities used across client builds:</p>
             <ul class="benefit-list mt-3 space-y-3 text-sm text-slate-700">
               <li>Clearer service positioning for faster buyer understanding.</li>
               <li>More focused inquiries from better-qualified prospects.</li>
               <li>Improved page engagement from cleaner content structure.</li>
               <li>Higher trust from stronger visual hierarchy and credibility signals.</li>
             </ul>
+            <div class="mt-4 rounded-xl border border-slate-200 bg-slate-50 p-3">
+              <p class="text-xs font-semibold uppercase tracking-wide text-slate-600">Need deeper proof?</p>
+              <p class="mt-1 text-xs text-slate-600">Request full case-study details during your fit call.</p>
+            </div>
           </aside>
         </div>
-        <p class="mt-5 text-xs text-slate-600">Additional named references are shared during fit calls.</p>
+        <p class="mt-5 text-xs text-slate-600">17 projects delivered to date. Additional named references are shared during fit calls.</p>
       </div>
     </section>
 
     <section id="about" class="scroll-mt-24 bg-white py-16 sm:py-20">
-      <div class="mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+      <div class="about-layout mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:items-start lg:px-8">
         <div>
           <p class="text-xs font-semibold uppercase tracking-[0.14em] text-sky-700">About</p>
-          <div class="mt-2 inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white px-4 py-3 shadow-sm">
+          <div class="about-profile mt-2 inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white px-4 py-3 shadow-sm">
             <picture>
               <source type="image/webp" srcset="assets/images/profile/justice-mubayiwa.webp" />
-              <img src="assets/images/profile/justice-mubayiwa.png" alt="Justice Mubayiwa profile picture" class="h-14 w-14 rounded-full border-2 border-sky-400 object-cover object-top" width="56" height="56" decoding="async" loading="lazy" />
+              <img src="assets/images/profile/justice-mubayiwa.png" alt="Justice Mubayiwa small business web developer profile picture" class="h-14 w-14 rounded-full border-2 border-sky-400 object-cover object-top" width="56" height="56" decoding="async" loading="lazy" />
             </picture>
             <div>
               <p class="font-display text-lg font-semibold text-slate-900">Justice Mubayiwa</p>
               <p class="text-sm text-slate-600">Founder, Craytivo</p>
             </div>
           </div>
-          <p class="mt-5 text-slate-600">I am Justice Mubayiwa, founder of Craytivo. I help small and medium-sized businesses grow with websites built to attract qualified leads, convert more visitors into paying clients, and retain customers through clear messaging and a smooth user experience.</p>
-          <p class="mt-3 text-slate-600">You can expect honest communication, reliable timelines, and practical recommendations shaped around your business goals, not trends. Every project is handled with care, from strategy to launch, so your site not only looks professional but also earns trust and supports long-term results.</p>
-          <div class="mt-6 grid gap-3 sm:grid-cols-2">
+          <p class="about-copy mt-5 max-w-[62ch] text-slate-600">I am Justice Mubayiwa, founder of Craytivo. I help small and medium-sized businesses grow with websites built to attract qualified leads, convert more visitors into paying clients, and retain customers through clear messaging and a smooth user experience.</p>
+          <p class="about-copy mt-3 max-w-[62ch] text-slate-600">You can expect honest communication, reliable timelines, and practical recommendations shaped around your business goals, not trends. Every project is handled with care, from strategy to launch, so your site not only looks professional but also earns trust and supports long-term results.</p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="meta-chip">SMB-focused</span>
+            <span class="meta-chip">Trust-first UX</span>
+            <span class="meta-chip">Clear timelines</span>
+          </div>
+          <div class="about-fit mt-6 grid gap-3 sm:grid-cols-2">
             <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
               <h3 class="text-sm font-semibold text-slate-900">Best fit for</h3>
               <ul class="mt-2 space-y-1.5 text-sm text-slate-700">
@@ -815,7 +1157,7 @@
             </div>
           </div>
         </div>
-        <div class="flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm interactive-card">
+        <div class="about-why flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm interactive-card">
           <h3 class="text-lg font-semibold">Why Craytivo</h3>
           <p class="mt-2 max-w-[44ch] text-sm text-slate-600">A practical partner for businesses that need speed, clarity, and measurable outcomes.</p>
           <ul class="benefit-list mt-4 max-w-[52ch] space-y-3 text-sm text-slate-700">
@@ -847,15 +1189,37 @@
         <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-xl sm:p-10">
           <div class="max-w-2xl">
             <p class="section-kicker">Get Started</p>
-            <h2 class="text-3xl font-bold tracking-tight">Book Free 15-Min Strategy Call</h2>
-            <p class="section-intro mt-3">Share your goals and leave with a recommended page plan, realistic timeline, and quote range.</p>
+            <h2 class="text-3xl font-bold tracking-tight">Book Free 15-Min Website Strategy Call</h2>
+            <p class="section-intro mt-3">Share your goals and leave with a recommended page plan, realistic timeline, and quote range for your small business website.</p>
             <p class="mt-2 text-sm text-slate-500">Reply within 1 business day.</p>
             <p class="mt-2 text-sm font-medium text-blue-800">Currently taking a limited number of new projects each month.</p>
-            <a href="#" aria-label="Open Calendly to schedule your call instantly" class="calendly-trigger mt-4 inline-flex text-sm font-medium text-slate-600 underline underline-offset-4 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 sm:rounded-md sm:border sm:border-slate-300 sm:px-4 sm:py-2 sm:font-semibold sm:text-slate-900 sm:no-underline sm:hover:bg-slate-100">Schedule Instantly</a>
-            <p class="mt-2 text-sm text-slate-600">Prefer a quick estimate first? Add a 2-3 sentence brief in the message field and submit the form.</p>
+            <div class="mt-4 grid gap-3 sm:grid-cols-2">
+              <div class="rounded-xl border border-slate-200 bg-slate-50 p-3">
+                <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Fastest path</p>
+                <a href="#" aria-label="Open Calendly to schedule your call instantly" class="calendly-trigger mt-1 inline-flex text-sm font-semibold text-slate-900 underline underline-offset-4 hover:text-slate-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">Schedule instantly</a>
+                <p class="mt-1 text-xs text-slate-600">Pick a time in under 1 minute.</p>
+              </div>
+              <div class="rounded-xl border border-slate-200 bg-slate-50 p-3">
+                <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Prefer written brief?</p>
+                <p class="mt-1 text-sm font-semibold text-slate-900">Send this form below</p>
+                <p class="mt-1 text-xs text-slate-600">Include a 2-3 sentence project brief.</p>
+              </div>
+            </div>
           </div>
           <form id="leadForm" class="mt-8 grid gap-5" action="https://formspree.io/f/mjkrnyrn" method="POST" novalidate>
             <input type="hidden" name="_next" value="#thanks" />
+            <input type="hidden" name="_subject" value="New Craytivo Lead" />
+            <input type="hidden" name="source_page" value="homepage" />
+            <input type="hidden" id="utmSource" name="utm_source" value="" />
+            <input type="hidden" id="utmMedium" name="utm_medium" value="" />
+            <input type="hidden" id="utmCampaign" name="utm_campaign" value="" />
+            <input type="hidden" id="utmContent" name="utm_content" value="" />
+            <input type="hidden" id="utmTerm" name="utm_term" value="" />
+            <input type="hidden" id="referrerSource" name="referrer_source" value="" />
+            <input type="hidden" id="leadScore" name="lead_score" value="" />
+            <input type="hidden" id="leadTier" name="lead_tier" value="" />
+            <input type="hidden" id="leadTags" name="lead_tags" value="" />
+            <input type="hidden" id="followUpSequence" name="follow_up_sequence" value="" />
 
             <!-- If this field is filled, treat as spam. -->
             <div class="absolute -left-[9999px] w-px h-px overflow-hidden" aria-hidden="true">
@@ -886,6 +1250,40 @@
                 <option>Not sure</option>
               </select>
             </div>
+            <div class="grid gap-5 sm:grid-cols-2">
+              <div>
+                <label for="budgetRange" class="mb-1 block text-sm font-medium">Budget Range *</label>
+                <select id="budgetRange" name="budget_range" required class="w-full rounded-md border border-slate-300 px-3 py-2 text-sm shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">
+                  <option value="">Select budget range</option>
+                  <option>$150-$449</option>
+                  <option>$450-$899</option>
+                  <option>$900-$1,499</option>
+                  <option>$1,500+</option>
+                </select>
+              </div>
+              <div>
+                <label for="timeline" class="mb-1 block text-sm font-medium">Desired Timeline *</label>
+                <select id="timeline" name="timeline" required class="w-full rounded-md border border-slate-300 px-3 py-2 text-sm shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">
+                  <option value="">Select timeline</option>
+                  <option>ASAP (4-7 days)</option>
+                  <option>1-2 weeks</option>
+                  <option>2-4 weeks</option>
+                  <option>Flexible</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="primaryGoal" class="mb-1 block text-sm font-medium">Primary Goal *</label>
+              <select id="primaryGoal" name="primary_goal" required class="w-full rounded-md border border-slate-300 px-3 py-2 text-sm shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">
+                <option value="">Select primary goal</option>
+                <option>More qualified leads</option>
+                <option>Improve trust and brand credibility</option>
+                <option>Launch fast</option>
+                <option>Increase online sales</option>
+                <option>Improve speed and SEO</option>
+              </select>
+            </div>
 
             <div>
               <label for="message" class="mb-1 block text-sm font-medium">Message *</label>
@@ -903,26 +1301,24 @@
             <div class="flex flex-col items-start gap-4 sm:flex-row sm:flex-wrap sm:items-center">
               <button id="submitBtn" type="submit" class="cta-primary rounded-md px-5 py-3 text-sm font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">Send Inquiry</button>
               <a href="#" aria-label="Open Calendly to schedule your call instantly" class="calendly-trigger text-sm font-medium text-slate-600 underline underline-offset-4 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 sm:rounded-md sm:border sm:border-slate-300 sm:px-4 sm:py-2 sm:font-semibold sm:text-slate-900 sm:no-underline sm:hover:bg-slate-100">Schedule Instantly</a>
-              <a href="#contact" class="text-sm font-medium text-slate-700 underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 rounded-md">Use contact form</a>
             </div>
             <p class="helper-note">What happens next: After you submit, you get a confirmation and a response within 1 business day with next steps.</p>
           </form>
           <div class="panel-muted mt-8 rounded-2xl p-5">
             <h3 class="text-lg font-semibold">Quick FAQ</h3>
-            <div class="mt-4 space-y-4 text-sm text-slate-700">
-              <div>
-                <p class="font-medium text-slate-900">How much does a project usually cost?</p>
-                <p class="mt-1">Packages start at $450. Final quote depends on scope and timeline.</p>
-                <p class="mt-1">Minimum engagement for one-off support starts at $150.</p>
-              </div>
-              <div>
-                <p class="font-medium text-slate-900">How long does it take?</p>
-                <p class="mt-1">Some sites can be completed in as little as 4 days. Larger projects launch in a few weeks, based on scope and feedback speed.</p>
-              </div>
-              <div>
-                <p class="font-medium text-slate-900">What happens after I submit?</p>
-                <p class="mt-1">You get a reply within 1 business day with next steps and call options.</p>
-              </div>
+            <div class="mt-4 space-y-3">
+              <details class="faq-item" open>
+                <summary>How much do small business website packages cost?</summary>
+                <p>Small business website packages start at $450. Final quote depends on scope and timeline. Minimum engagement for one-off support starts at $150.</p>
+              </details>
+              <details class="faq-item">
+                <summary>How long does it take?</summary>
+                <p>Some sites can be completed in as little as 4 days. Larger projects usually launch in a few weeks based on scope and feedback speed.</p>
+              </details>
+              <details class="faq-item">
+                <summary>What happens after I submit?</summary>
+                <p>You get a reply within 1 business day with next steps and options to schedule your call.</p>
+              </details>
             </div>
           </div>
         </div>
@@ -983,6 +1379,104 @@
     const submitBtn = document.getElementById('submitBtn');
     const formError = document.getElementById('formError');
     const formStatus = document.getElementById('formStatus');
+    const projectType = document.getElementById('projectType');
+    const budgetRange = document.getElementById('budgetRange');
+    const timeline = document.getElementById('timeline');
+    const primaryGoal = document.getElementById('primaryGoal');
+    const message = document.getElementById('message');
+    const leadScore = document.getElementById('leadScore');
+    const leadTier = document.getElementById('leadTier');
+    const leadTags = document.getElementById('leadTags');
+    const followUpSequence = document.getElementById('followUpSequence');
+    const utmSource = document.getElementById('utmSource');
+    const utmMedium = document.getElementById('utmMedium');
+    const utmCampaign = document.getElementById('utmCampaign');
+    const utmContent = document.getElementById('utmContent');
+    const utmTerm = document.getElementById('utmTerm');
+    const referrerSource = document.getElementById('referrerSource');
+
+    // Capture campaign/source context for lightweight CRM tagging.
+    const params = new URLSearchParams(window.location.search);
+    if (utmSource) utmSource.value = params.get('utm_source') || '(direct)';
+    if (utmMedium) utmMedium.value = params.get('utm_medium') || '(none)';
+    if (utmCampaign) utmCampaign.value = params.get('utm_campaign') || '(none)';
+    if (utmContent) utmContent.value = params.get('utm_content') || '(none)';
+    if (utmTerm) utmTerm.value = params.get('utm_term') || '(none)';
+    if (referrerSource) referrerSource.value = document.referrer || '(none)';
+
+    function cleanTag(value) {
+      return (value || 'none').toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');
+    }
+
+    function buildLeadScore() {
+      let score = 0;
+      const pType = projectType ? projectType.value : '';
+      const budget = budgetRange ? budgetRange.value : '';
+      const tline = timeline ? timeline.value : '';
+      const goal = primaryGoal ? primaryGoal.value : '';
+      const msgLen = message && message.value ? message.value.trim().length : 0;
+
+      const projectPoints = {
+        'Landing Page': 2,
+        'Business Website': 3,
+        'E-commerce': 4,
+        'Web App': 4,
+        'Maintenance': 1,
+        'Not sure': 1
+      };
+      const budgetPoints = {
+        '$150-$449': 1,
+        '$450-$899': 2,
+        '$900-$1,499': 3,
+        '$1,500+': 4
+      };
+      const timelinePoints = {
+        'ASAP (4-7 days)': 3,
+        '1-2 weeks': 2,
+        '2-4 weeks': 2,
+        'Flexible': 1
+      };
+      const goalPoints = {
+        'More qualified leads': 3,
+        'Improve trust and brand credibility': 2,
+        'Launch fast': 2,
+        'Increase online sales': 3,
+        'Improve speed and SEO': 2
+      };
+
+      score += projectPoints[pType] || 0;
+      score += budgetPoints[budget] || 0;
+      score += timelinePoints[tline] || 0;
+      score += goalPoints[goal] || 0;
+      if (msgLen >= 120) score += 1;
+
+      let tier = 'cold';
+      let sequence = 'D0 auto-reply; D3 follow-up; D7 final check-in';
+      if (score >= 10) {
+        tier = 'hot';
+        sequence = 'D0 auto-reply; D1 personal follow-up; D3 priority check-in';
+      } else if (score >= 7) {
+        tier = 'warm';
+        sequence = 'D0 auto-reply; D2 follow-up; D5 value check-in';
+      }
+
+      const tags = [
+        `tier:${tier}`,
+        `project:${cleanTag(pType)}`,
+        `budget:${cleanTag(budget)}`,
+        `timeline:${cleanTag(tline)}`,
+        `goal:${cleanTag(goal)}`,
+        `source:${cleanTag(utmSource ? utmSource.value : '(direct)')}`,
+        `medium:${cleanTag(utmMedium ? utmMedium.value : '(none)')}`,
+        `campaign:${cleanTag(utmCampaign ? utmCampaign.value : '(none)')}`
+      ].join(', ');
+
+      if (leadScore) leadScore.value = String(score);
+      if (leadTier) leadTier.value = tier;
+      if (leadTags) leadTags.value = tags;
+      if (followUpSequence) followUpSequence.value = sequence;
+    }
+
     form.addEventListener('submit', (e) => {
       if (!form.checkValidity()) {
         e.preventDefault();
@@ -993,6 +1487,7 @@
         formStatus.textContent = 'Submission failed. Please fill in all required fields and try again.';
         return;
       }
+      buildLeadScore();
       formError.classList.add('hidden');
       formStatus.classList.remove('text-red-700');
       formStatus.classList.remove('text-slate-600');
