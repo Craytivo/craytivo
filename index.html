@@ -14,17 +14,21 @@
   <meta property="og:title" content="Craytivo | Web Developer Edmonton | Small Business Website Design" />
   <meta property="og:description" content="Website design for small businesses and startups in Edmonton with conversion-focused, mobile-first builds and affordable packages." />
   <meta property="og:url" content="https://craytivo.com/" />
-  <meta property="og:image" content="https://craytivo.com/assets/brand/craytivo.png?v=20260214" />
+  <meta property="og:image" content="https://craytivo.com/assets/brand/craytivo-favicon.png?v=20260214c" />
+  <meta property="og:image:width" content="182" />
+  <meta property="og:image:height" content="164" />
+  <meta property="og:image:type" content="image/png" />
   <meta property="og:site_name" content="Craytivo" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Craytivo | Web Developer Edmonton | Small Business Website Design" />
   <meta name="twitter:description" content="Website design for small businesses and startups in Edmonton with conversion-focused, mobile-first builds and affordable packages." />
   <meta name="geo.region" content="CA-AB" />
-  <meta name="twitter:image" content="https://craytivo.com/assets/brand/craytivo.png?v=20260214" />
+  <meta name="twitter:image" content="https://craytivo.com/assets/brand/craytivo-favicon.png?v=20260214c" />
   <link rel="icon" type="image/png" href="assets/brand/craytivo-favicon.png?v=20260214" />
   <link rel="apple-touch-icon" href="assets/brand/craytivo-favicon.png?v=20260214" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://formspree.io" crossorigin />
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700&display=swap" rel="stylesheet" /></noscript>
   <link rel="stylesheet" href="assets/css/tailwind.css?v=20260214" />
@@ -45,7 +49,7 @@
       "@type": "ProfessionalService",
       "name": "Craytivo",
       "url": "https://craytivo.com/",
-      "image": "https://craytivo.com/assets/brand/craytivo.png?v=20260214",
+      "image": "https://craytivo.com/assets/brand/craytivo-favicon.png?v=20260214c",
       "description": "Craytivo provides small business website design and web development in Edmonton with a conversion-focused, mobile-first approach.",
       "founder": {
         "@type": "Person",
@@ -73,6 +77,78 @@
         "Web development",
         "Landing page design",
         "Website optimization"
+      ]
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much do small business website packages cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Small business website packages start at $450. Final quote depends on scope and timeline. Minimum engagement for one-off support starts at $150."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does it take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Some sites can be completed in as little as 4 days. Larger projects usually launch in a few weeks based on scope and feedback speed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens after I submit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You get a reply within 1 business day with next steps and options to schedule your call."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What affects total website cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cost is shaped by page count, content readiness, custom features, integrations, and how quickly approvals are provided."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is included in a typical build?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most projects include mobile-first design, core SEO setup, lead forms, analytics setup, and a clear conversion-focused page structure."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you build on WordPress, static, or Shopify?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Platform recommendation depends on your goals, editing needs, and budget. I will suggest the most practical option during planning."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you offer ongoing support and maintenance?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Ongoing support is available for updates, fixes, performance improvements, and post-launch optimisation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you only work in Edmonton?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Edmonton and Alberta are my core focus, and I also support remote clients when there is a clear scope and communication process."
+          }
+        }
       ]
     }
   </script>
@@ -195,12 +271,6 @@
       height: 4px;
       border-radius: 9999px;
       background: linear-gradient(90deg, var(--brand-start), var(--brand-end));
-    }
-    #thanks h2::after {
-      background: linear-gradient(90deg, #93c5fd, #ffffff);
-    }
-    #thanks h2 {
-      color: #ffffff;
     }
     .interactive-card {
       position: relative;
@@ -514,6 +584,152 @@
       font-size: 0.9rem;
       line-height: 1.55;
     }
+    .form-progress {
+      height: 6px;
+      border-radius: 9999px;
+      background: #e2e8f0;
+      overflow: hidden;
+    }
+    .form-progress > span {
+      display: block;
+      height: 100%;
+      width: 50%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--brand-start), var(--brand-end));
+      transition: width 220ms ease;
+    }
+    .form-field {
+      position: relative;
+    }
+    .form-icon {
+      position: absolute;
+      left: 0.8rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #64748b;
+      pointer-events: none;
+      transition: color 180ms ease, opacity 170ms ease;
+    }
+    .form-field textarea ~ .form-icon {
+      top: 1.1rem;
+      transform: none;
+    }
+    .form-input {
+      transition: border-color 180ms ease, box-shadow 180ms ease, background-color 180ms ease, transform 180ms ease;
+    }
+    .form-input:focus {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 20px -18px rgba(15, 23, 42, 0.5);
+    }
+    .form-field:focus-within .form-icon {
+      color: #0ea5e9;
+    }
+    .form-field:has(.form-input:focus) .form-icon,
+    .form-field:has(.form-input:not(:placeholder-shown)) .form-icon,
+    .form-field:has(.form-input.has-value) .form-icon {
+      opacity: 0;
+    }
+    .form-floating-label {
+      position: absolute;
+      left: 2.35rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.875rem;
+      color: #64748b;
+      pointer-events: none;
+      transition: transform 170ms ease, top 170ms ease, font-size 170ms ease, color 170ms ease;
+      background: transparent;
+    }
+    .form-field textarea + .form-floating-label {
+      top: 1rem;
+      transform: none;
+    }
+    .form-field select + .form-floating-label {
+      top: 0.58rem;
+      transform: none;
+      font-size: 0.69rem;
+      color: #0369a1;
+    }
+    .form-input:focus + .form-floating-label,
+    .form-input:not(:placeholder-shown) + .form-floating-label,
+    .form-input.has-value + .form-floating-label {
+      top: 0.4rem;
+      transform: none;
+      font-size: 0.75rem;
+      color: #0369a1;
+      opacity: 0;
+    }
+    .choice-grid {
+      display: grid;
+      gap: 0.5rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .choice-chip {
+      border: 1px solid #cbd5e1;
+      background: #f8fafc;
+      border-radius: 0.75rem;
+      padding: 0.58rem 0.72rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #334155;
+      transition: border-color 180ms ease, background-color 180ms ease, color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+    }
+    .choice-chip:hover {
+      border-color: #93c5fd;
+      background: #eff6ff;
+    }
+    .choice-chip.active {
+      border-color: #0ea5e9;
+      background: #e0f2fe;
+      color: #0f172a;
+      box-shadow: 0 10px 18px -16px rgba(2, 132, 199, 0.65);
+      transform: translateY(-1px);
+    }
+    .summary-inline {
+      border: 1px solid #dbeafe;
+      background: #eff6ff;
+      border-radius: 0.9rem;
+      padding: 0.65rem 0.8rem;
+      font-size: 0.8rem;
+      color: #0f172a;
+      line-height: 1.45;
+    }
+    .success-inline {
+      border: 1px solid #86efac;
+      background: linear-gradient(180deg, #f0fdf4 0%, #dcfce7 100%);
+      border-radius: 1rem;
+      padding: 0.9rem 1rem;
+    }
+    #leadForm {
+      row-gap: 1.25rem;
+    }
+    #leadForm [data-form-step="1"],
+    #leadForm [data-form-step="2"] {
+      row-gap: 1.15rem;
+    }
+    #leadForm .form-input {
+      min-height: 3.1rem;
+      font-size: 0.96rem;
+    }
+    #leadForm textarea.form-input {
+      min-height: 8.8rem;
+      padding-top: 1.4rem;
+    }
+    #leadForm .form-floating-label {
+      font-size: 0.88rem;
+    }
+    #leadForm .choice-chip {
+      min-height: 2.8rem;
+      padding: 0.72rem 0.82rem;
+    }
+    #leadForm .summary-inline {
+      padding: 0.78rem 0.9rem;
+    }
+    @media (max-width: 640px) {
+      .choice-grid {
+        grid-template-columns: 1fr;
+      }
+    }
     .nav-link {
       position: relative;
       transition: color 180ms ease;
@@ -537,6 +753,16 @@
     }
     .nav-link-active {
       color: #0369a1 !important;
+    }
+    .site-header {
+      transform: translateZ(0);
+      will-change: transform;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      isolation: isolate;
+    }
+    .site-header-inner {
+      min-height: 4rem;
     }
     .trusted-wrap {
       background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
@@ -651,8 +877,7 @@
       #process,
       #work,
       #testimonials,
-      #about,
-      #thanks {
+      #about {
         padding-top: 3rem !important;
         padding-bottom: 3rem !important;
       }
@@ -763,8 +988,8 @@
 <body class="site-bg overflow-x-hidden text-slate-900 antialiased">
   <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[70] focus:rounded-md focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">Skip to content</a>
 
-  <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 shadow-sm backdrop-blur">
-    <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3.5 sm:px-6 lg:px-8">
+  <header class="site-header sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 shadow-sm backdrop-blur">
+    <div class="site-header-inner mx-auto flex max-w-6xl items-center justify-between px-4 py-3.5 sm:px-6 lg:px-8">
       <a href="#top" class="inline-flex items-center rounded-md px-1.5 py-1 transition-colors duration-200 hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-600 focus-visible:ring-offset-2" aria-label="Craytivo home">
         <img src="assets/brand/craytivo-header-logo.png?v=20260214" alt="Craytivo logo" class="h-7 w-auto translate-y-[1px] sm:h-8 md:h-9" width="144" height="36" decoding="async" />
       </a>
@@ -884,8 +1109,8 @@
           <div class="trusted-grid mt-6">
             <div class="logo-tile">
               <picture>
-                <source type="image/webp" srcset="assets/brand/craytivo.webp?v=20260214" />
-                <img src="assets/brand/craytivo.png?v=20260214" alt="Craytivo small business web developer logo" loading="lazy" decoding="async" width="180" height="60" sizes="(max-width: 639px) 42vw, (max-width: 1023px) 23vw, 180px" />
+                <source type="image/png" srcset="assets/brand/craytivo-favicon.png?v=20260214c" />
+                <img src="assets/brand/craytivo-favicon.png?v=20260214c" alt="Craytivo small business web developer logo" loading="lazy" decoding="async" width="182" height="164" sizes="(max-width: 639px) 42vw, (max-width: 1023px) 23vw, 182px" />
               </picture>
             </div>
             <div class="logo-tile">
@@ -1251,6 +1476,7 @@
             <p class="section-kicker">Get Started</p>
             <h2 class="text-3xl font-bold tracking-tight">Website design for small business Edmonton - Book Free 15-Min Strategy Call</h2>
             <p class="section-intro mt-3">Share your goals and leave with a recommended page plan, realistic timeline, and quote range for your Edmonton small business or startup website.</p>
+            <p class="mt-2 text-sm text-slate-600">Based in Edmonton, Alberta, Canada. Serving local businesses across Edmonton and Alberta, with remote projects across Canada.</p>
             <p class="mt-2 text-sm text-slate-500">Reply within 1 business day.</p>
             <p class="mt-2 text-sm font-medium text-blue-800">Currently taking a limited number of new projects each month.</p>
             <div class="mt-4 grid gap-3 sm:grid-cols-2">
@@ -1266,8 +1492,8 @@
               </div>
             </div>
           </div>
-          <form id="leadForm" class="mt-8 grid gap-5" action="https://formspree.io/f/mjkrnyrn" method="POST" novalidate>
-            <input type="hidden" name="_next" value="#thanks" />
+          <form id="leadForm" class="mt-8 grid gap-6" action="https://formspree.io/f/mjkrnyrn" method="POST" novalidate>
+            <input type="hidden" name="_next" value="https://craytivo.com/?submitted=1#contact" />
             <input type="hidden" name="_subject" value="New Craytivo Lead" />
             <input type="hidden" name="source_page" value="homepage" />
             <input type="hidden" id="utmSource" name="utm_source" value="" />
@@ -1280,6 +1506,27 @@
             <input type="hidden" id="leadTier" name="lead_tier" value="" />
             <input type="hidden" id="leadTags" name="lead_tags" value="" />
             <input type="hidden" id="followUpSequence" name="follow_up_sequence" value="" />
+            <input type="hidden" id="budgetRange" name="budget_range" value="" />
+            <input type="hidden" id="timeline" name="timeline" value="" />
+
+            <div id="onPageConfirm" class="success-inline hidden" role="status" aria-live="polite">
+              <p class="text-xs font-semibold uppercase tracking-wide text-emerald-800">Inquiry Received</p>
+              <p class="mt-1 text-sm font-medium text-emerald-900">Thanks, your inquiry was submitted successfully.</p>
+              <ul class="mt-2 space-y-1 text-xs text-emerald-900">
+                <li>Reply within 1 business day.</li>
+                <li>You will get next steps based on your goals and timeline.</li>
+              </ul>
+            </div>
+
+            <div class="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
+              <div class="flex items-center justify-between gap-3">
+                <p id="formStepLabel" class="text-xs font-semibold uppercase tracking-wide text-slate-600">Step 1 of 2</p>
+                <p class="text-xs text-slate-500">Quick intake</p>
+              </div>
+              <div class="form-progress mt-2">
+                <span id="formProgressFill"></span>
+              </div>
+            </div>
 
             <!-- If this field is filled, treat as spam. -->
             <div class="absolute -left-[9999px] w-px h-px overflow-hidden" aria-hidden="true">
@@ -1287,82 +1534,121 @@
               <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
             </div>
 
-            <div class="grid gap-5 sm:grid-cols-2">
-              <div>
-                <label for="fullName" class="mb-1 block text-sm font-medium">Full Name *</label>
-                <input id="fullName" name="full_name" type="text" required class="w-full rounded-md border border-slate-300 px-3 py-2 text-sm shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900" />
+            <div id="formStep1" data-form-step="1" class="grid gap-6">
+              <div class="grid gap-6 sm:grid-cols-2">
+                <div>
+                  <div class="form-field">
+                    <span class="form-icon" aria-hidden="true">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19a4 4 0 0 0-8 0" /><circle cx="11" cy="11" r="4" /></svg>
+                    </span>
+                    <input id="fullName" name="full_name" type="text" required autocomplete="name" placeholder=" " class="form-input w-full rounded-md border border-slate-300 bg-slate-50 px-3 pb-2 pt-5 pl-9 text-sm shadow-sm focus:border-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900" />
+                    <label for="fullName" class="form-floating-label">Full Name *</label>
+                  </div>
+                  <p id="fullNameError" class="mt-1 hidden text-xs text-red-600"></p>
+                </div>
+                <div>
+                  <div class="form-field">
+                    <span class="form-icon" aria-hidden="true">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16v10H4z" /><path stroke-linecap="round" stroke-linejoin="round" d="m4 8 8 6 8-6" /></svg>
+                    </span>
+                    <input id="email" name="email" type="email" required autocomplete="email" placeholder=" " class="form-input w-full rounded-md border border-slate-300 bg-slate-50 px-3 pb-2 pt-5 pl-9 text-sm shadow-sm focus:border-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900" />
+                    <label for="email" class="form-floating-label">Email *</label>
+                  </div>
+                  <p id="emailError" class="mt-1 hidden text-xs text-red-600"></p>
+                </div>
               </div>
               <div>
-                <label for="email" class="mb-1 block text-sm font-medium">Email *</label>
-                <input id="email" name="email" type="email" required class="w-full rounded-md border border-slate-300 px-3 py-2 text-sm shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900" />
+                <label for="projectType" class="mb-1 block text-sm font-medium text-slate-800">Project Type *</label>
+                <div class="form-field">
+                  <select id="projectType" name="project_type" required class="form-input w-full rounded-md border border-slate-300 bg-slate-50 px-3 py-2 text-sm shadow-sm focus:border-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">
+                    <option value="">Select project type</option>
+                    <option>Landing Page</option>
+                    <option>Business Website</option>
+                    <option>E-commerce</option>
+                    <option>Web App</option>
+                    <option>Maintenance</option>
+                    <option>Not sure</option>
+                  </select>
+                </div>
+                <p id="projectTypeError" class="mt-1 hidden text-xs text-red-600"></p>
+              </div>
+              <div class="flex w-full justify-end pt-3">
+                <div class="w-full sm:w-auto sm:min-w-[19rem]">
+                  <button id="toStep2Btn" type="button" class="cta-secondary inline-flex h-14 w-full items-center justify-center rounded-md px-8 text-base font-semibold">Continue to Step 2</button>
+                </div>
               </div>
             </div>
 
-            <div>
-              <label for="projectType" class="mb-1 block text-sm font-medium">Project Type *</label>
-              <select id="projectType" name="project_type" required class="w-full rounded-md border border-slate-300 px-3 py-2 text-sm shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">
-                <option value="">Select project type</option>
-                <option>Landing Page</option>
-                <option>Business Website</option>
-                <option>E-commerce</option>
-                <option>Web App</option>
-                <option>Maintenance</option>
-                <option>Not sure</option>
-              </select>
-            </div>
-            <div class="grid gap-5 sm:grid-cols-2">
+            <div id="formStep2" data-form-step="2" class="hidden grid gap-6">
               <div>
-                <label for="budgetRange" class="mb-1 block text-sm font-medium">Budget Range *</label>
-                <select id="budgetRange" name="budget_range" required class="w-full rounded-md border border-slate-300 px-3 py-2 text-sm shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">
-                  <option value="">Select budget range</option>
-                  <option>$150-$449</option>
-                  <option>$450-$899</option>
-                  <option>$900-$1,499</option>
-                  <option>$1,500+</option>
-                </select>
+                <p class="mb-2 text-sm font-medium text-slate-800">Budget Range *</p>
+                <div class="choice-grid" id="budgetChoices" role="group" aria-label="Budget range options">
+                  <button type="button" class="choice-chip" data-target="budgetRange" data-value="$150-$449">$150-$449</button>
+                  <button type="button" class="choice-chip" data-target="budgetRange" data-value="$450-$899">$450-$899</button>
+                  <button type="button" class="choice-chip" data-target="budgetRange" data-value="$900-$1,499">$900-$1,499</button>
+                  <button type="button" class="choice-chip" data-target="budgetRange" data-value="$1,500+">$1,500+</button>
+                </div>
+                <p id="budgetRangeError" class="mt-1 hidden text-xs text-red-600"></p>
               </div>
               <div>
-                <label for="timeline" class="mb-1 block text-sm font-medium">Desired Timeline *</label>
-                <select id="timeline" name="timeline" required class="w-full rounded-md border border-slate-300 px-3 py-2 text-sm shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">
-                  <option value="">Select timeline</option>
-                  <option>ASAP (4-7 days)</option>
-                  <option>1-2 weeks</option>
-                  <option>2-4 weeks</option>
-                  <option>Flexible</option>
-                </select>
+                <p class="mb-2 text-sm font-medium text-slate-800">Desired Timeline *</p>
+                <div class="choice-grid" id="timelineChoices" role="group" aria-label="Timeline options">
+                  <button type="button" class="choice-chip" data-target="timeline" data-value="ASAP (4-7 days)">ASAP (4-7 days)</button>
+                  <button type="button" class="choice-chip" data-target="timeline" data-value="1-2 weeks">1-2 weeks</button>
+                  <button type="button" class="choice-chip" data-target="timeline" data-value="2-4 weeks">2-4 weeks</button>
+                  <button type="button" class="choice-chip" data-target="timeline" data-value="Flexible">Flexible</button>
+                </div>
+                <p id="timelineError" class="mt-1 hidden text-xs text-red-600"></p>
               </div>
+              <div>
+                <label for="primaryGoal" class="mb-1 block text-sm font-medium text-slate-800">Primary Goal *</label>
+                <div class="form-field">
+                  <select id="primaryGoal" name="primary_goal" required class="form-input w-full rounded-md border border-slate-300 bg-slate-50 px-3 py-2 text-sm shadow-sm focus:border-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">
+                    <option value="">Select primary goal</option>
+                    <option>More qualified leads</option>
+                    <option>Improve trust and brand credibility</option>
+                    <option>Launch fast</option>
+                    <option>Increase online sales</option>
+                    <option>Improve speed and SEO</option>
+                  </select>
+                </div>
+                <p id="primaryGoalError" class="mt-1 hidden text-xs text-red-600"></p>
+              </div>
+              <div>
+                <div class="form-field">
+                  <span class="form-icon" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M5 5h14v14H5z" /><path stroke-linecap="round" stroke-linejoin="round" d="M8 9h8M8 13h6" /></svg>
+                  </span>
+                  <textarea id="message" name="message" rows="5" required minlength="20" placeholder=" " class="form-input w-full rounded-md border border-slate-300 bg-slate-50 px-3 pb-2 pt-5 pl-9 text-sm shadow-sm focus:border-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900"></textarea>
+                  <label for="message" class="form-floating-label">Message *</label>
+                </div>
+                <p id="messageError" class="mt-1 hidden text-xs text-red-600"></p>
+              </div>
+
+              <label class="inline-flex w-full items-start gap-3 rounded-md border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-700">
+                <input id="consent" name="consent" type="checkbox" required class="mt-0.5 h-5 w-5 shrink-0 rounded border-slate-300 text-slate-900 focus-visible:ring-slate-900" />
+                <span>I consent to being contacted about my project inquiry. *</span>
+              </label>
+              <p id="consentError" class="mt-1 hidden text-xs text-red-600"></p>
+
+              <div class="summary-inline" id="smartSummary">
+                <span class="font-semibold">Summary:</span>
+                <span id="summaryProject">Project: Not set</span> &bull;
+                <span id="summaryBudget">Budget: Not set</span> &bull;
+                <span id="summaryTimeline">Timeline: Not set</span>
+              </div>
+              <p class="text-xs text-slate-600">17 projects delivered &bull; Reply within 1 business day.</p>
+
+              <p id="formError" class="hidden text-xs text-red-600" role="alert">Please complete all required fields before submitting.</p>
+              <p id="formStatus" class="text-xs text-slate-600" aria-live="polite">Status: Waiting for your submission.</p>
+
+              <div class="flex flex-col items-start gap-4 sm:flex-row sm:flex-wrap sm:items-center">
+                <button id="backToStep1Btn" type="button" class="cta-secondary inline-flex h-14 min-w-[10rem] items-center justify-center rounded-md px-6 text-base font-semibold">Back</button>
+                <button id="submitBtn" type="submit" class="cta-primary inline-flex h-14 min-w-[12rem] items-center justify-center rounded-md px-6 text-base font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">Send Inquiry</button>
+                <a href="#" aria-label="Open Calendly to schedule your call instantly" class="calendly-trigger inline-flex h-14 min-w-[14rem] items-center justify-center rounded-md border border-slate-300 px-6 text-base font-semibold text-slate-900 no-underline hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">Schedule Instantly</a>
+              </div>
+              <p class="helper-note text-xs">What happens next: After you submit, you get a confirmation and a response within 1 business day with next steps.</p>
             </div>
-
-            <div>
-              <label for="primaryGoal" class="mb-1 block text-sm font-medium">Primary Goal *</label>
-              <select id="primaryGoal" name="primary_goal" required class="w-full rounded-md border border-slate-300 px-3 py-2 text-sm shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">
-                <option value="">Select primary goal</option>
-                <option>More qualified leads</option>
-                <option>Improve trust and brand credibility</option>
-                <option>Launch fast</option>
-                <option>Increase online sales</option>
-                <option>Improve speed and SEO</option>
-              </select>
-            </div>
-
-            <div>
-              <label for="message" class="mb-1 block text-sm font-medium">Message *</label>
-              <textarea id="message" name="message" rows="5" required class="w-full rounded-md border border-slate-300 px-3 py-2 text-sm shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900"></textarea>
-            </div>
-
-            <label class="inline-flex items-start gap-3 text-sm text-slate-700">
-              <input id="consent" name="consent" type="checkbox" required class="mt-1 h-4 w-4 rounded border-slate-300 text-slate-900 focus-visible:ring-slate-900" />
-              <span>I consent to being contacted about my project inquiry. *</span>
-            </label>
-
-            <p id="formError" class="hidden text-sm text-red-600" role="alert">Please complete all required fields before submitting.</p>
-            <p id="formStatus" class="text-sm text-slate-600" aria-live="polite">Status: Waiting for your submission.</p>
-
-            <div class="flex flex-col items-start gap-4 sm:flex-row sm:flex-wrap sm:items-center">
-              <button id="submitBtn" type="submit" class="cta-primary rounded-md px-5 py-3 text-sm font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">Send Inquiry</button>
-              <a href="#" aria-label="Open Calendly to schedule your call instantly" class="calendly-trigger text-sm font-medium text-slate-600 underline underline-offset-4 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 sm:rounded-md sm:border sm:border-slate-300 sm:px-4 sm:py-2 sm:font-semibold sm:text-slate-900 sm:no-underline sm:hover:bg-slate-100">Schedule Instantly</a>
-            </div>
-            <p class="helper-note">What happens next: After you submit, you get a confirmation and a response within 1 business day with next steps.</p>
           </form>
           <div class="panel-muted mt-8 rounded-2xl p-5">
             <h3 class="text-lg font-semibold">Quick FAQ</h3>
@@ -1405,25 +1691,19 @@
       </div>
     </section>
 
-    <section id="thanks" class="scroll-mt-24 bg-slate-900 py-16 text-white sm:py-20">
-      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div class="max-w-2xl rounded-3xl border border-white/20 bg-white/10 p-8 shadow-xl backdrop-blur">
-          <p class="text-xs font-semibold uppercase tracking-[0.14em] text-slate-300">Thank You</p>
-          <h2 class="text-3xl font-bold tracking-tight">Thanks &mdash; I'll reach out soon.</h2>
-          <p class="mt-3 text-slate-200">Usually within 1 business day.</p>
-          <a href="#top" class="mt-6 inline-flex rounded-md bg-white px-5 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white">Back to homepage</a>
-        </div>
-      </div>
-    </section>
   </main>
 
   <footer class="border-t border-slate-200 bg-white py-8">
     <div class="mx-auto flex max-w-6xl flex-col gap-4 px-4 text-sm text-slate-600 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
-      <p>Craytivo</p>
-      <a href="#contact" class="hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 rounded-md">Contact form</a>
+      <p>Craytivo &bull; Web Developer Edmonton, Alberta, Canada</p>
+      <a href="#contact" aria-label="Book a free 15-minute strategy call via the contact form" class="hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 rounded-md">Book Free 15-Min Call</a>
       <div class="flex flex-wrap gap-4">
-        <a href="https://x.com/craytivo" target="_blank" rel="noopener noreferrer" class="hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 rounded-md">X</a>
+        <a href="https://x.com/craytivo" target="_blank" rel="noopener noreferrer" aria-label="Follow Craytivo on X" class="hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 rounded-md">X</a>
       </div>
+    </div>
+    <div class="mx-auto mt-3 max-w-6xl px-4 text-xs text-slate-500 sm:px-6 lg:px-8">
+      <p>Serving Edmonton and Alberta small businesses, plus remote projects across Canada.</p>
+      <p>&copy; 2026 Craytivo. All rights reserved.</p>
     </div>
   </footer>
 
@@ -1485,8 +1765,16 @@
     // Form UX enhancements
     const form = document.getElementById('leadForm');
     const submitBtn = document.getElementById('submitBtn');
+    const toStep2Btn = document.getElementById('toStep2Btn');
+    const backToStep1Btn = document.getElementById('backToStep1Btn');
+    const formStep1 = document.getElementById('formStep1');
+    const formStep2 = document.getElementById('formStep2');
+    const formStepLabel = document.getElementById('formStepLabel');
+    const formProgressFill = document.getElementById('formProgressFill');
     const formError = document.getElementById('formError');
     const formStatus = document.getElementById('formStatus');
+    const fullName = document.getElementById('fullName');
+    const email = document.getElementById('email');
     const projectType = document.getElementById('projectType');
     const budgetRange = document.getElementById('budgetRange');
     const timeline = document.getElementById('timeline');
@@ -1502,6 +1790,32 @@
     const utmContent = document.getElementById('utmContent');
     const utmTerm = document.getElementById('utmTerm');
     const referrerSource = document.getElementById('referrerSource');
+    const honeypot = document.getElementById('website');
+    const onPageConfirm = document.getElementById('onPageConfirm');
+    const consent = document.getElementById('consent');
+    const summaryProject = document.getElementById('summaryProject');
+    const summaryBudget = document.getElementById('summaryBudget');
+    const summaryTimeline = document.getElementById('summaryTimeline');
+    const fieldErrorMap = {
+      fullName: document.getElementById('fullNameError'),
+      email: document.getElementById('emailError'),
+      projectType: document.getElementById('projectTypeError'),
+      budgetRange: document.getElementById('budgetRangeError'),
+      timeline: document.getElementById('timelineError'),
+      primaryGoal: document.getElementById('primaryGoalError'),
+      message: document.getElementById('messageError'),
+      consent: document.getElementById('consentError')
+    };
+    let currentFormStep = 1;
+
+    // Show on-page confirmation after Formspree redirects back to this page.
+    const pageParams = new URLSearchParams(window.location.search);
+    if (onPageConfirm && pageParams.get('submitted') === '1') {
+      onPageConfirm.classList.remove('hidden');
+      const cleaned = new URL(window.location.href);
+      cleaned.searchParams.delete('submitted');
+      history.replaceState(null, '', `${cleaned.pathname}${cleaned.search}${cleaned.hash}`);
+    }
 
     // Capture campaign/source context for lightweight CRM tagging.
     const params = new URLSearchParams(window.location.search);
@@ -1585,8 +1899,150 @@
       if (followUpSequence) followUpSequence.value = sequence;
     }
 
+    function setFieldError(field, messageText) {
+      if (!field) return;
+      const errorEl = fieldErrorMap[field.id];
+      if (!errorEl) return;
+      if (messageText) {
+        errorEl.textContent = messageText;
+        errorEl.classList.remove('hidden');
+        field.setAttribute('aria-invalid', 'true');
+      } else {
+        errorEl.textContent = '';
+        errorEl.classList.add('hidden');
+        field.removeAttribute('aria-invalid');
+      }
+    }
+
+    function getFieldMessage(field) {
+      if (!field) return '';
+      if (field.id === 'email' && field.validity.typeMismatch) return 'Please enter a valid email address.';
+      if (field.id === 'message' && field.validity.tooShort) return 'Please provide at least 20 characters.';
+      if (field.validity.valueMissing) return 'This field is required.';
+      return '';
+    }
+
+    function setStep(step) {
+      currentFormStep = step;
+      const isStepOne = step === 1;
+      if (formStep1 && formStep2) {
+        formStep1.classList.toggle('hidden', !isStepOne);
+        formStep2.classList.toggle('hidden', isStepOne);
+      }
+      if (formStepLabel) formStepLabel.textContent = `Step ${step} of 2`;
+      if (formProgressFill) formProgressFill.style.width = isStepOne ? '50%' : '100%';
+    }
+
+    function validateFields(fields) {
+      let valid = true;
+      fields.forEach((field) => {
+        if (!field || field.type === 'hidden') return;
+        if (!field.checkValidity()) {
+          setFieldError(field, getFieldMessage(field));
+          valid = false;
+        } else {
+          setFieldError(field, '');
+        }
+      });
+      return valid;
+    }
+
+    function updateSummary() {
+      if (summaryProject) summaryProject.textContent = `Project: ${projectType.value || 'Not set'}`;
+      if (summaryBudget) summaryBudget.textContent = `Budget: ${budgetRange.value || 'Not set'}`;
+      if (summaryTimeline) summaryTimeline.textContent = `Timeline: ${timeline.value || 'Not set'}`;
+    }
+
+    function applyChoiceChip(targetId, value, button) {
+      const target = document.getElementById(targetId);
+      if (!target) return;
+      target.value = value;
+      const group = button.closest('[role="group"]');
+      if (group) {
+        group.querySelectorAll('.choice-chip').forEach((chip) => {
+          chip.classList.remove('active');
+          chip.setAttribute('aria-pressed', 'false');
+        });
+      }
+      button.classList.add('active');
+      button.setAttribute('aria-pressed', 'true');
+      setFieldError(target, '');
+      updateSummary();
+    }
+
+    document.querySelectorAll('.choice-chip').forEach((chip) => {
+      chip.addEventListener('click', () => {
+        const target = chip.getAttribute('data-target');
+        const value = chip.getAttribute('data-value') || '';
+        applyChoiceChip(target, value, chip);
+      });
+    });
+
+    if (toStep2Btn) {
+      toStep2Btn.addEventListener('click', () => {
+        const stepOneFields = [fullName, email, projectType];
+        const isValid = validateFields(stepOneFields);
+        if (!isValid) {
+          formError.classList.remove('hidden');
+          formStatus.classList.remove('text-green-700');
+          formStatus.classList.remove('text-slate-600');
+          formStatus.classList.add('text-red-700');
+          formStatus.textContent = 'Please complete Step 1 before continuing.';
+          return;
+        }
+        formError.classList.add('hidden');
+        formStatus.classList.remove('text-red-700');
+        formStatus.classList.add('text-slate-600');
+        formStatus.textContent = 'Step 2: confirm scope and submit your inquiry.';
+        setStep(2);
+        updateSummary();
+      });
+    }
+
+    if (backToStep1Btn) {
+      backToStep1Btn.addEventListener('click', () => {
+        setStep(1);
+      });
+    }
+
+    const validatedFields = [fullName, email, projectType, primaryGoal, message, consent];
+    validatedFields.forEach((field) => {
+      const evt = field.tagName === 'SELECT' || field.type === 'checkbox' ? 'change' : 'input';
+      field.addEventListener(evt, () => {
+        if (field.tagName === 'SELECT') {
+          field.classList.toggle('has-value', field.value !== '');
+        }
+        if (!field.checkValidity()) {
+          setFieldError(field, getFieldMessage(field));
+          return;
+        }
+        setFieldError(field, '');
+        updateSummary();
+      });
+    });
+
     form.addEventListener('submit', (e) => {
-      if (!form.checkValidity()) {
+      if (currentFormStep !== 2) {
+        e.preventDefault();
+        setStep(2);
+        updateSummary();
+        return;
+      }
+      const visibleFieldValid = validateFields([fullName, email, projectType, primaryGoal, message, consent]);
+      let chipsValid = true;
+      if (!budgetRange.value) {
+        setFieldError(budgetRange, 'Please choose a budget range.');
+        chipsValid = false;
+      } else {
+        setFieldError(budgetRange, '');
+      }
+      if (!timeline.value) {
+        setFieldError(timeline, 'Please choose a timeline.');
+        chipsValid = false;
+      } else {
+        setFieldError(timeline, '');
+      }
+      if (!visibleFieldValid || !chipsValid) {
         e.preventDefault();
         formError.classList.remove('hidden');
         formStatus.classList.remove('text-green-700');
@@ -1595,12 +2051,23 @@
         formStatus.textContent = 'Submission failed. Please fill in all required fields and try again.';
         return;
       }
+      if (honeypot && honeypot.value.trim() !== '') {
+        e.preventDefault();
+        formStatus.classList.remove('text-green-700');
+        formStatus.classList.remove('text-slate-600');
+        formStatus.classList.add('text-red-700');
+        formStatus.textContent = 'Submission failed. Please try again.';
+        return;
+      }
+      validatedFields.forEach((field) => setFieldError(field, ''));
+      setFieldError(budgetRange, '');
+      setFieldError(timeline, '');
       buildLeadScore();
       formError.classList.add('hidden');
       formStatus.classList.remove('text-red-700');
       formStatus.classList.remove('text-slate-600');
       formStatus.classList.add('text-green-700');
-      formStatus.textContent = 'Submitting your inquiry now. You will be redirected after submission.';
+      formStatus.textContent = 'Submitting your inquiry now...';
       submitBtn.disabled = true;
       submitBtn.textContent = 'Sending...';
       setTimeout(() => {
@@ -1608,10 +2075,17 @@
         submitBtn.textContent = 'Send Inquiry';
       }, 12000);
     });
+    [projectType, primaryGoal].forEach((selectField) => {
+      if (selectField) {
+        selectField.classList.toggle('has-value', selectField.value !== '');
+      }
+    });
+    setStep(1);
+    updateSummary();
 
     // Subtle reveal animation for section content
     const revealTargets = document.querySelectorAll(
-      'main section h2, main section .interactive-card, main section .panel-muted, #thanks .rounded-3xl'
+      'main section h2, main section .interactive-card, main section .panel-muted'
     );
     if ('IntersectionObserver' in window) {
       revealTargets.forEach((el, index) => {
