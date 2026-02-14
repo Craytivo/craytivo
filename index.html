@@ -2,28 +2,32 @@
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Craytivo | Small Business Web Developer & Website Design</title>
-  <meta name="description" content="Craytivo provides small business website design and web development with a conversion-focused, mobile-first approach. Book a free 15-minute strategy call for a page plan, timeline, and quote range." />
+  <title>Craytivo | Web Developer Edmonton | Small Business Website Design</title>
+  <meta name="description" content="Craytivo is a web developer in Edmonton delivering small business and startup website design with a conversion-focused, mobile-first approach. Affordable website packages, clear timelines, and practical support." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://craytivo.com/" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Craytivo | Small Business Web Developer & Website Design" />
-  <meta property="og:description" content="Small business website design and web development with conversion-focused, mobile-first builds and clear timelines." />
+  <meta property="og:title" content="Craytivo | Web Developer Edmonton | Small Business Website Design" />
+  <meta property="og:description" content="Website design for small businesses and startups in Edmonton with conversion-focused, mobile-first builds and affordable packages." />
   <meta property="og:url" content="https://craytivo.com/" />
-  <meta property="og:image" content="https://craytivo.com/assets/logos/craytivo.png" />
+  <meta property="og:image" content="https://craytivo.com/assets/brand/craytivo.png?v=20260214" />
   <meta property="og:site_name" content="Craytivo" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Craytivo | Small Business Web Developer & Website Design" />
-  <meta name="twitter:description" content="Small business website design and web development with conversion-focused, mobile-first builds and clear timelines." />
-  <meta name="twitter:image" content="https://craytivo.com/assets/logos/craytivo.png" />
-  <link rel="icon" type="image/png" href="assets/logos/craytivo.png" />
-  <link rel="apple-touch-icon" href="assets/logos/craytivo.png" />
+  <meta name="twitter:title" content="Craytivo | Web Developer Edmonton | Small Business Website Design" />
+  <meta name="twitter:description" content="Website design for small businesses and startups in Edmonton with conversion-focused, mobile-first builds and affordable packages." />
+  <meta name="geo.region" content="CA-AB" />
+  <meta name="twitter:image" content="https://craytivo.com/assets/brand/craytivo.png?v=20260214" />
+  <link rel="icon" type="image/png" href="assets/brand/craytivo-favicon.png?v=20260214" />
+  <link rel="apple-touch-icon" href="assets/brand/craytivo-favicon.png?v=20260214" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700&display=swap" rel="stylesheet" /></noscript>
-  <link rel="stylesheet" href="assets/css/tailwind.css" />
+  <link rel="stylesheet" href="assets/css/tailwind.css?v=20260214" />
   <link rel="preload" as="style" href="https://assets.calendly.com/assets/external/widget.css" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript><link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" /></noscript>
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
@@ -41,8 +45,8 @@
       "@type": "ProfessionalService",
       "name": "Craytivo",
       "url": "https://craytivo.com/",
-      "image": "https://craytivo.com/assets/logos/craytivo.png",
-      "description": "Craytivo provides small business website design and web development with a conversion-focused, mobile-first approach.",
+      "image": "https://craytivo.com/assets/brand/craytivo.png?v=20260214",
+      "description": "Craytivo provides small business website design and web development in Edmonton with a conversion-focused, mobile-first approach.",
       "founder": {
         "@type": "Person",
         "name": "Justice Mubayiwa"
@@ -50,7 +54,20 @@
       "sameAs": [
         "https://x.com/craytivo"
       ],
-      "areaServed": "Worldwide",
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Edmonton"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Alberta"
+        },
+        {
+          "@type": "Country",
+          "name": "Canada"
+        }
+      ],
       "serviceType": [
         "Web design",
         "Web development",
@@ -190,6 +207,7 @@
       overflow: hidden;
       transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease, background-color 220ms ease;
       will-change: transform;
+      border-radius: 1rem;
     }
     .interactive-card::before {
       content: "";
@@ -397,6 +415,17 @@
       transform: translateY(0);
       box-shadow: 0 8px 14px -12px rgba(15, 23, 42, 0.45);
     }
+    .cta-secondary:focus-visible,
+    .cta-primary:focus-visible,
+    .cta-hero:focus-visible,
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    textarea:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 2px #0ea5e9, 0 0 0 4px rgba(255, 255, 255, 0.72);
+    }
     .section-kicker {
       font-size: 0.77rem;
       font-weight: 800;
@@ -423,7 +452,7 @@
     }
     .section-intro {
       max-width: 62ch;
-      color: #475569;
+      color: #526176;
       line-height: 1.7;
     }
     .meta-chip {
@@ -439,6 +468,7 @@
       border: 1px solid #e2e8f0;
       background: linear-gradient(180deg, var(--surface-soft) 0%, var(--surface-strong) 100%);
       box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+      border-radius: 1rem;
     }
     .helper-note {
       font-size: 0.82rem;
@@ -484,6 +514,30 @@
       font-size: 0.9rem;
       line-height: 1.55;
     }
+    .nav-link {
+      position: relative;
+      transition: color 180ms ease;
+    }
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -0.45rem;
+      height: 2px;
+      border-radius: 9999px;
+      background: linear-gradient(90deg, var(--brand-start), var(--brand-end));
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 180ms ease;
+    }
+    .nav-link:hover::after,
+    .nav-link-active::after {
+      transform: scaleX(1);
+    }
+    .nav-link-active {
+      color: #0369a1 !important;
+    }
     .trusted-wrap {
       background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
       border-radius: 1.25rem;
@@ -518,18 +572,18 @@
       align-items: center;
       justify-content: center;
       border-radius: 0.85rem;
-      border: 1px solid #e2e8f0;
+      border: 1px solid #dbe7f4;
       background: #ffffff;
       padding: 0.7rem;
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.85), 0 8px 18px -16px rgba(15, 23, 42, 0.35);
       transition: border-color 220ms ease, box-shadow 220ms ease, transform 220ms ease;
     }
     .trusted-grid .logo-tile:nth-child(-n+4) {
       border-color: #dbeafe;
     }
     .logo-tile:hover {
-      border-color: #bfdbfe;
-      box-shadow: 0 12px 20px -16px rgba(37, 99, 235, 0.55);
+      border-color: #93c5fd;
+      box-shadow: 0 14px 22px -16px rgba(30, 64, 175, 0.45);
       transform: translateY(-1px);
     }
     .logo-tile img {
@@ -587,6 +641,9 @@
         font-size: 0.7rem;
       }
       #top .hero-assets-grid article:nth-child(n+2) {
+        display: none;
+      }
+      #mobileMenu .nav-link::after {
         display: none;
       }
       #trusted,
@@ -707,30 +764,32 @@
   <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[70] focus:rounded-md focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">Skip to content</a>
 
   <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 shadow-sm backdrop-blur">
-    <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-      <a href="#top" class="brand-mark text-lg font-semibold tracking-tight focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 rounded-md">Craytivo</a>
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3.5 sm:px-6 lg:px-8">
+      <a href="#top" class="inline-flex items-center rounded-md px-1.5 py-1 transition-colors duration-200 hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-600 focus-visible:ring-offset-2" aria-label="Craytivo home">
+        <img src="assets/brand/craytivo-header-logo.png?v=20260214" alt="Craytivo logo" class="h-7 w-auto translate-y-[1px] sm:h-8 md:h-9" width="144" height="36" decoding="async" />
+      </a>
       <nav class="hidden items-center gap-6 md:flex" aria-label="Primary">
-        <a href="#services" aria-label="View small business website design and web development services" class="text-sm font-medium text-slate-700 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 rounded-md">Services</a>
-        <a href="#process" class="text-sm font-medium text-slate-700 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 rounded-md">Process</a>
-        <a href="#work" aria-label="View selected small business web design and website redesign work" class="text-sm font-medium text-slate-700 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 rounded-md">Work</a>
-        <a href="#testimonials" class="text-sm font-medium text-slate-700 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 rounded-md">Testimonials</a>
-        <a href="#about" class="text-sm font-medium text-slate-700 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 rounded-md">About</a>
-        <a href="#contact" aria-label="Jump to contact section to book a free 15-minute call" class="cta-primary rounded-md px-4 py-2 text-sm font-semibold shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">Book Free 15-Min Call</a>
+        <a href="#services" data-section-link aria-label="View small business website design and web development services" class="nav-link text-sm font-medium text-slate-600 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-600 focus-visible:ring-offset-2 rounded-md">Services</a>
+        <a href="#process" data-section-link class="nav-link text-sm font-medium text-slate-600 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-600 focus-visible:ring-offset-2 rounded-md">Process</a>
+        <a href="#work" data-section-link aria-label="View selected small business web design and website redesign work" class="nav-link text-sm font-medium text-slate-600 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-600 focus-visible:ring-offset-2 rounded-md">Work</a>
+        <a href="#testimonials" data-section-link class="nav-link text-sm font-medium text-slate-600 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-600 focus-visible:ring-offset-2 rounded-md">Testimonials</a>
+        <a href="#about" data-section-link class="nav-link text-sm font-medium text-slate-600 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-600 focus-visible:ring-offset-2 rounded-md">About</a>
+        <a href="#contact" aria-label="Jump to contact section to book a free 15-minute call" class="cta-primary rounded-md px-4 py-2 text-sm font-semibold shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-600 focus-visible:ring-offset-2">Book Free 15-Min Call</a>
       </nav>
-      <button id="menuBtn" class="inline-flex items-center justify-center rounded-md border border-slate-300 p-2 text-slate-700 md:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900" aria-expanded="false" aria-controls="mobileMenu" aria-label="Toggle menu">
+      <button id="menuBtn" class="inline-flex items-center justify-center rounded-md border border-slate-300 p-2 text-slate-700 md:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-600 focus-visible:ring-offset-2" aria-expanded="false" aria-controls="mobileMenu" aria-label="Toggle menu">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5">
           <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5m-16.5 5.25h16.5m-16.5 5.25h16.5" />
         </svg>
       </button>
     </div>
-    <nav id="mobileMenu" class="hidden max-h-[70vh] overflow-y-auto border-t border-slate-200 bg-white px-4 py-3 md:hidden" aria-label="Mobile">
+    <nav id="mobileMenu" class="hidden max-h-[70vh] overflow-y-auto border-t border-slate-200 bg-white px-4 py-3 shadow-lg md:hidden md:shadow-none" aria-label="Mobile">
       <div class="flex flex-col gap-3">
-        <a href="#services" aria-label="View small business website design and web development services" class="mobile-link rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">Services</a>
-        <a href="#process" class="mobile-link rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">Process</a>
-        <a href="#work" aria-label="View selected small business web design and website redesign work" class="mobile-link rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">Work</a>
-        <a href="#testimonials" class="mobile-link rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">Testimonials</a>
-        <a href="#about" class="mobile-link rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">About</a>
-        <a href="#contact" aria-label="Jump to contact section to book a free 15-minute call" class="mobile-link cta-primary rounded-md px-3 py-2 text-center text-sm font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900">Book Free 15-Min Call</a>
+        <a href="#services" data-section-link aria-label="View small business website design and web development services" class="mobile-link nav-link rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-600 focus-visible:ring-offset-2">Services</a>
+        <a href="#process" data-section-link class="mobile-link nav-link rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-600 focus-visible:ring-offset-2">Process</a>
+        <a href="#work" data-section-link aria-label="View selected small business web design and website redesign work" class="mobile-link nav-link rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-600 focus-visible:ring-offset-2">Work</a>
+        <a href="#testimonials" data-section-link class="mobile-link nav-link rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-600 focus-visible:ring-offset-2">Testimonials</a>
+        <a href="#about" data-section-link class="mobile-link nav-link rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-600 focus-visible:ring-offset-2">About</a>
+        <a href="#contact" aria-label="Jump to contact section to book a free 15-minute call" class="mobile-link cta-primary rounded-md px-3 py-2 text-center text-sm font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-600 focus-visible:ring-offset-2">Book Free 15-Min Call</a>
       </div>
     </nav>
   </header>
@@ -743,9 +802,9 @@
       <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-10">
           <div class="max-w-3xl">
-            <p class="hero-eyebrow mb-4 inline-flex rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide">Justice Mubayiwa &bull; Craytivo</p>
-            <h1 class="font-display text-3xl font-bold leading-[1.08] tracking-tight sm:max-w-[20ch] sm:text-5xl">Small business website design and web development that <span class="accent-text">turns visits into booked calls</span>.</h1>
-            <p class="mt-5 max-w-[62ch] text-base text-slate-200 leading-relaxed sm:text-lg">Mobile-first, SEO-ready, and conversion-focused builds, with some projects launching in as little as 4 days.</p>
+            <p class="hero-eyebrow mb-4 inline-flex rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide">Edmonton Web Developer &bull; Justice Mubayiwa</p>
+            <h1 class="font-display text-3xl font-bold leading-[1.08] tracking-tight sm:max-w-[20ch] sm:text-5xl">Web developer Edmonton for small businesses and startups that <span class="accent-text">turn visits into booked calls</span>.</h1>
+            <p class="mt-5 max-w-[62ch] text-base text-slate-200 leading-relaxed sm:text-lg">Conversion-focused, mobile-first, and SEO-ready websites built for Edmonton businesses, with some smaller builds launching in as little as 4 days.</p>
             <div class="hero-cta-wrap mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <a href="#contact" aria-label="Book a free website strategy call for your small business website" class="cta-hero rounded-md px-5 py-3 text-center text-sm font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white sm:text-left">Get Free 15-Min Plan</a>
               <a href="#services" aria-label="See small business website design services and pricing" class="rounded-md border border-white/25 px-5 py-3 text-center text-sm font-semibold text-slate-200 hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white sm:text-left">See Services & Pricing</a>
@@ -825,47 +884,47 @@
           <div class="trusted-grid mt-6">
             <div class="logo-tile">
               <picture>
-                <source type="image/webp" srcset="assets/logos/craytivo.webp" />
-                <img src="assets/logos/craytivo.png" alt="Craytivo small business web developer logo" loading="lazy" decoding="async" width="180" height="60" sizes="(max-width: 639px) 42vw, (max-width: 1023px) 23vw, 180px" />
+                <source type="image/webp" srcset="assets/brand/craytivo.webp?v=20260214" />
+                <img src="assets/brand/craytivo.png?v=20260214" alt="Craytivo small business web developer logo" loading="lazy" decoding="async" width="180" height="60" sizes="(max-width: 639px) 42vw, (max-width: 1023px) 23vw, 180px" />
               </picture>
             </div>
             <div class="logo-tile">
               <picture>
-                <source type="image/webp" srcset="assets/logos/freedom-life-church.webp" />
-                <img src="assets/logos/freedom-life-church.png" alt="Freedom Life Church client logo" loading="lazy" decoding="async" width="180" height="60" sizes="(max-width: 639px) 42vw, (max-width: 1023px) 23vw, 180px" />
+                <source type="image/webp" srcset="assets/logos/freedom-life-church.webp?v=20260214" />
+                <img src="assets/logos/freedom-life-church.png?v=20260214" alt="Freedom Life Church client logo" loading="lazy" decoding="async" width="180" height="60" sizes="(max-width: 639px) 42vw, (max-width: 1023px) 23vw, 180px" />
               </picture>
             </div>
             <div class="logo-tile">
               <picture>
-                <source type="image/webp" srcset="assets/logos/soul-care.webp" />
-                <img src="assets/logos/soul-care.png" alt="Soul Care client website logo" loading="lazy" decoding="async" width="180" height="60" sizes="(max-width: 639px) 42vw, (max-width: 1023px) 23vw, 180px" />
+                <source type="image/webp" srcset="assets/logos/soul-care.webp?v=20260214" />
+                <img src="assets/logos/soul-care.png?v=20260214" alt="Soul Care client website logo" loading="lazy" decoding="async" width="180" height="60" sizes="(max-width: 639px) 42vw, (max-width: 1023px) 23vw, 180px" />
               </picture>
             </div>
             <div class="logo-tile">
-              <img src="assets/logos/icare.webp" alt="ICare client logo" loading="lazy" decoding="async" width="180" height="60" />
+              <img src="assets/logos/icare.webp?v=20260214" alt="ICare client logo" loading="lazy" decoding="async" width="180" height="60" />
             </div>
             <div class="logo-tile">
               <picture>
-                <source type="image/webp" srcset="assets/logos/marina-homes.webp" />
-                <img src="assets/logos/marina-homes.png" alt="Marina Homes client logo" loading="lazy" decoding="async" width="180" height="60" sizes="(max-width: 639px) 42vw, (max-width: 1023px) 23vw, 180px" />
-              </picture>
-            </div>
-            <div class="logo-tile">
-              <picture>
-                <source type="image/webp" srcset="assets/logos/ot-vibez.webp" />
-                <img src="assets/logos/ot-vibez.png" alt="OT Vibez Studio client website logo" loading="lazy" decoding="async" width="180" height="60" sizes="(max-width: 639px) 42vw, (max-width: 1023px) 23vw, 180px" />
+                <source type="image/webp" srcset="assets/logos/marina-homes.webp?v=20260214" />
+                <img src="assets/logos/marina-homes.png?v=20260214" alt="Marina Homes client logo" loading="lazy" decoding="async" width="180" height="60" sizes="(max-width: 639px) 42vw, (max-width: 1023px) 23vw, 180px" />
               </picture>
             </div>
             <div class="logo-tile">
               <picture>
-                <source type="image/webp" srcset="assets/logos/purposepath.webp" />
-                <img src="assets/logos/purposepath.jpeg" alt="Purpose Path client logo" loading="lazy" decoding="async" width="180" height="60" sizes="(max-width: 639px) 42vw, (max-width: 1023px) 23vw, 180px" />
+                <source type="image/webp" srcset="assets/logos/ot-vibez.webp?v=20260214" />
+                <img src="assets/logos/ot-vibez.png?v=20260214" alt="OT Vibez Studio client website logo" loading="lazy" decoding="async" width="180" height="60" sizes="(max-width: 639px) 42vw, (max-width: 1023px) 23vw, 180px" />
               </picture>
             </div>
             <div class="logo-tile">
               <picture>
-                <source type="image/webp" srcset="assets/logos/zemlar.webp" />
-                <img src="assets/logos/zemlar.png" alt="ZEMLAR Offices client website logo" loading="lazy" decoding="async" width="180" height="60" sizes="(max-width: 639px) 42vw, (max-width: 1023px) 23vw, 180px" />
+                <source type="image/webp" srcset="assets/logos/purposepath.webp?v=20260214" />
+                <img src="assets/logos/purposepath.jpeg?v=20260214" alt="Purpose Path client logo" loading="lazy" decoding="async" width="180" height="60" sizes="(max-width: 639px) 42vw, (max-width: 1023px) 23vw, 180px" />
+              </picture>
+            </div>
+            <div class="logo-tile">
+              <picture>
+                <source type="image/webp" srcset="assets/logos/zemlar.webp?v=20260214" />
+                <img src="assets/logos/zemlar.png?v=20260214" alt="ZEMLAR Offices client website logo" loading="lazy" decoding="async" width="180" height="60" sizes="(max-width: 639px) 42vw, (max-width: 1023px) 23vw, 180px" />
               </picture>
             </div>
           </div>
@@ -879,7 +938,7 @@
       <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <p class="section-kicker">What I Build</p>
         <h2 class="text-3xl font-bold tracking-tight">Services</h2>
-        <p class="section-intro mt-3">Small business website packages designed to increase inquiries, reduce friction, and support steady growth.</p>
+        <p class="section-intro mt-3">Small business website packages and custom website design in Edmonton built to increase enquiries, reduce friction, and support steady growth.</p>
         <div class="mt-4 flex flex-wrap gap-2">
           <span class="meta-chip">Conversion-focused</span>
           <span class="meta-chip">SEO-ready</span>
@@ -937,7 +996,7 @@
         </div>
         <div class="mt-8 rounded-2xl border border-slate-200 bg-slate-50 p-5">
           <h3 class="text-lg font-semibold">Pricing Snapshot</h3>
-          <p class="mt-2 text-sm text-slate-700">Clear starting ranges to help you plan. Final quote depends on scope and timeline.</p>
+          <p class="mt-2 text-sm text-slate-700">Affordable starting ranges from an affordable web developer in Edmonton to help you plan confidently. Final quote depends on scope and timeline.</p>
           <div class="mt-4 grid gap-3 sm:grid-cols-3">
             <article class="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm">
               <p class="font-semibold text-slate-900">Starter</p>
@@ -1125,8 +1184,8 @@
           <p class="text-xs font-semibold uppercase tracking-[0.14em] text-sky-700">About</p>
           <div class="about-profile mt-2 inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white px-4 py-3 shadow-sm">
             <picture>
-              <source type="image/webp" srcset="assets/images/profile/justice-mubayiwa.webp" />
-              <img src="assets/images/profile/justice-mubayiwa.png" alt="Justice Mubayiwa small business web developer profile picture" class="h-14 w-14 rounded-full border-2 border-sky-400 object-cover object-top" width="56" height="56" decoding="async" loading="lazy" />
+              <source type="image/webp" srcset="assets/images/profile/justice-mubayiwa.webp?v=20260214" />
+              <img src="assets/images/profile/justice-mubayiwa.png?v=20260214" alt="Justice Mubayiwa small business web developer profile picture" class="h-14 w-14 rounded-full border-2 border-sky-400 object-cover object-top" width="56" height="56" decoding="async" loading="lazy" />
             </picture>
             <div>
               <p class="font-display text-lg font-semibold text-slate-900">Justice Mubayiwa</p>
@@ -1135,6 +1194,7 @@
           </div>
           <p class="about-copy mt-5 max-w-[62ch] text-slate-600">I am Justice Mubayiwa, founder of Craytivo. I help small and medium-sized businesses grow with websites built to attract qualified leads, convert more visitors into paying clients, and retain customers through clear messaging and a smooth user experience.</p>
           <p class="about-copy mt-3 max-w-[62ch] text-slate-600">You can expect honest communication, reliable timelines, and practical recommendations shaped around your business goals, not trends. Every project is handled with care, from strategy to launch, so your site not only looks professional but also earns trust and supports long-term results.</p>
+          <p class="about-copy mt-3 max-w-[62ch] text-slate-600">I primarily support small and medium-sized businesses and startups across Edmonton and Alberta, with clear process and practical delivery from kickoff to launch. As a startup website developer in Edmonton, I focus on launch-ready websites that are clear, credible, and easy to grow.</p>
           <div class="mt-4 flex flex-wrap gap-2">
             <span class="meta-chip">SMB-focused</span>
             <span class="meta-chip">Trust-first UX</span>
@@ -1189,8 +1249,8 @@
         <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-xl sm:p-10">
           <div class="max-w-2xl">
             <p class="section-kicker">Get Started</p>
-            <h2 class="text-3xl font-bold tracking-tight">Book Free 15-Min Website Strategy Call</h2>
-            <p class="section-intro mt-3">Share your goals and leave with a recommended page plan, realistic timeline, and quote range for your small business website.</p>
+            <h2 class="text-3xl font-bold tracking-tight">Website design for small business Edmonton - Book Free 15-Min Strategy Call</h2>
+            <p class="section-intro mt-3">Share your goals and leave with a recommended page plan, realistic timeline, and quote range for your Edmonton small business or startup website.</p>
             <p class="mt-2 text-sm text-slate-500">Reply within 1 business day.</p>
             <p class="mt-2 text-sm font-medium text-blue-800">Currently taking a limited number of new projects each month.</p>
             <div class="mt-4 grid gap-3 sm:grid-cols-2">
@@ -1319,6 +1379,26 @@
                 <summary>What happens after I submit?</summary>
                 <p>You get a reply within 1 business day with next steps and options to schedule your call.</p>
               </details>
+              <details class="faq-item">
+                <summary>What affects total website cost?</summary>
+                <p>Cost is shaped by page count, content readiness, custom features, integrations, and how quickly approvals are provided.</p>
+              </details>
+              <details class="faq-item">
+                <summary>What is included in a typical build?</summary>
+                <p>Most projects include mobile-first design, core SEO setup, lead forms, analytics setup, and a clear conversion-focused page structure.</p>
+              </details>
+              <details class="faq-item">
+                <summary>Do you build on WordPress, static, or Shopify?</summary>
+                <p>Yes. Platform recommendation depends on your goals, editing needs, and budget. I will suggest the most practical option during planning.</p>
+              </details>
+              <details class="faq-item">
+                <summary>Do you offer ongoing support and maintenance?</summary>
+                <p>Yes. Ongoing support is available for updates, fixes, performance improvements, and post-launch optimisation.</p>
+              </details>
+              <details class="faq-item">
+                <summary>Do you only work in Edmonton?</summary>
+                <p>Edmonton and Alberta are my core focus, and I also support remote clients when there is a clear scope and communication process.</p>
+              </details>
             </div>
           </div>
         </div>
@@ -1363,6 +1443,34 @@
         menuBtn.setAttribute('aria-expanded', 'false');
       });
     });
+
+    // Highlight active section in header navigation.
+    const sectionLinks = Array.from(document.querySelectorAll('a[data-section-link]'));
+    const sectionMap = new Map();
+    sectionLinks.forEach((link) => {
+      const id = link.getAttribute('href');
+      if (!id || !id.startsWith('#')) return;
+      const sectionEl = document.querySelector(id);
+      if (sectionEl) sectionMap.set(id, sectionEl);
+    });
+    const activeById = (id) => {
+      sectionLinks.forEach((link) => {
+        const isActive = link.getAttribute('href') === id;
+        link.classList.toggle('nav-link-active', isActive);
+      });
+    };
+    const sectionObserver = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (!visible) return;
+        const activeId = `#${visible.target.id}`;
+        if (sectionMap.has(activeId)) activeById(activeId);
+      },
+      { rootMargin: '-42% 0px -48% 0px', threshold: [0.2, 0.45, 0.7] }
+    );
+    sectionMap.forEach((sectionEl) => sectionObserver.observe(sectionEl));
 
     // Calendly popup triggers
     document.querySelectorAll('.calendly-trigger').forEach((link) => {
