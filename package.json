@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:css": "tailwindcss -c ./config/tailwind.config.js -i ./styles/tailwind.input.css -o ./assets/css/tailwind.css --minify",
-    "watch:css": "tailwindcss -c ./config/tailwind.config.js -i ./styles/tailwind.input.css -o ./assets/css/tailwind.css --watch"
+    "watch:css": "tailwindcss -c ./config/tailwind.config.js -i ./styles/tailwind.input.css -o ./assets/css/tailwind.css --watch",
+    "validate:links": "node scripts/validate-links.js"
   },
   "repository": {
     "type": "git",
