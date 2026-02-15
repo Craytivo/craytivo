@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://craytivo.com/sitemap.xml
+Sitemap: https://www.craytivo.com/sitemap.xml
+
 
