@@ -12,6 +12,7 @@
       <a href="/" class="inline-flex items-center rounded-md px-1.5 py-1 transition-colors duration-200 hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-600 focus-visible:ring-offset-2" aria-label="Craytivo home">
         <img src="/assets/brand/craytivo-header-logo.png?v=20260214" alt="Craytivo logo" class="h-7 w-auto translate-y-[1px] sm:h-8 md:h-9" width="144" height="36" loading="eager" fetchpriority="high" decoding="async" />
       </a>
+      <p class="hidden lg:inline-flex rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-slate-600">Edmonton, Alberta</p>
       <nav class="hidden items-center gap-6 md:flex" aria-label="Primary">
         <div class="nav-dropdown">
           <a href="/#services" class="nav-link nav-dropdown-trigger text-sm font-medium text-slate-600 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-600 focus-visible:ring-offset-2 rounded-md">
@@ -40,6 +41,7 @@
     </div>
     <nav id="mobileMenu" class="hidden max-h-[70vh] overflow-y-auto border-t border-slate-200 bg-white px-4 py-3 shadow-lg md:hidden md:shadow-none" aria-label="Mobile">
       <div class="flex flex-col gap-3">
+        <p class="rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-xs font-semibold uppercase tracking-wide text-slate-600">Edmonton, Alberta Based</p>
         <details class="mobile-services">
           <summary>Services
             <svg class="mobile-services-caret" viewBox="0 0 20 20" fill="none" aria-hidden="true">
