@@ -1222,6 +1222,57 @@
         gap: 0.7rem;
         max-width: 100%;
       }
+      #top .hero-subcopy {
+        margin-top: 0.85rem;
+        max-width: 34ch;
+        font-size: 0.92rem;
+        line-height: 1.5;
+      }
+      #top .hero-cta-wrap {
+        margin-top: 1rem;
+        gap: 0.55rem;
+        align-items: flex-start;
+      }
+      #top .hero-cta-wrap .cta-hero {
+        width: 100%;
+        text-align: center;
+      }
+      #top .hero-secondary-cta {
+        border: 0;
+        background: transparent;
+        padding: 0;
+        color: #bfdbfe;
+        font-size: 0.82rem;
+        text-decoration: underline;
+        text-underline-offset: 0.18rem;
+      }
+      #top .hero-signal-row span:nth-child(n+3) {
+        display: none;
+      }
+      #top .hero-proof-line {
+        margin-top: 0.48rem;
+        max-width: 34ch;
+        font-size: 0.78rem;
+        color: #cbd5e1;
+        line-height: 1.45;
+      }
+      #top .hero-right-rail {
+        padding-top: 0.25rem;
+      }
+      #top .hero-card-speed,
+      #top .hero-card-seo {
+        display: none;
+      }
+      #top .hero-card-flow {
+        padding: 0.62rem !important;
+        border-radius: 0.9rem;
+      }
+      #top .hero-card-flow > p {
+        font-size: 0.66rem;
+      }
+      #top .hero-card-flow .hero-diagram {
+        margin-top: 0.4rem;
+      }
       #top .hero-asset-card {
         padding: 0.65rem !important;
         border-radius: 0.95rem;
@@ -1478,21 +1529,21 @@
           <div class="max-w-3xl">
             <p class="hero-eyebrow mb-4 inline-flex rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide">Edmonton Web Developer &bull; Justice Mubayiwa</p>
             <h1 class="font-display text-3xl font-bold leading-[1.08] tracking-tight sm:max-w-[20ch] sm:text-5xl">Web developer Edmonton for small businesses and startups that <span class="accent-text">turn visits into booked calls</span>.</h1>
-            <p class="mt-5 max-w-[62ch] text-base text-slate-200 leading-relaxed sm:text-lg">Conversion-focused, mobile-first, and SEO-ready websites built for Edmonton businesses, with some smaller builds launching in as little as 4 days.</p>
+            <p class="hero-subcopy mt-5 max-w-[62ch] text-base text-slate-200 leading-relaxed sm:text-lg">Conversion-focused, mobile-first, and SEO-ready websites built for Edmonton businesses, with some smaller builds launching in as little as 4 days.</p>
             <div class="hero-cta-wrap mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <a href="#contact" class="cta-hero rounded-md px-5 py-3 text-center text-sm font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white sm:text-left">Get Free 15-Min Plan</a>
-              <a href="#services" class="rounded-md border border-white/25 px-5 py-3 text-center text-sm font-semibold text-slate-200 hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white sm:text-left">See Services & Pricing</a>
+              <a href="#services" class="hero-secondary-cta rounded-md border border-white/25 px-5 py-3 text-center text-sm font-semibold text-slate-200 hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white sm:text-left">See Services & Pricing</a>
             </div>
             <div class="hero-signal-row mt-4 flex flex-wrap gap-2 text-xs font-semibold text-slate-100">
               <span>Mobile-first</span>
               <span>SEO-ready</span>
               <span>Conversion-focused</span>
             </div>
-            <p class="mt-4 text-sm text-slate-200">Free 15-min call &bull; Quick goals review &bull; Timeline + quote range &bull; Reply within 1 business day</p>
+            <p class="hero-proof-line mt-4 text-sm text-slate-200">Free 15-min call &bull; Quick goals review &bull; Timeline + quote range &bull; Reply within 1 business day</p>
           </div>
-          <div class="lg:justify-self-end lg:self-start lg:pt-10">
+          <div class="hero-right-rail lg:justify-self-end lg:self-start lg:pt-10">
             <div class="hero-assets-grid mx-auto max-w-md lg:max-w-[34rem]">
-              <article class="hero-asset-card hero-feature-card rounded-2xl p-4 shadow-lg backdrop-blur interactive-card">
+              <article class="hero-asset-card hero-feature-card hero-card-speed rounded-2xl p-4 shadow-lg backdrop-blur interactive-card">
                 <div class="hero-feature-panel">
                   <div class="hero-feature-row">
                     <span class="feature-icon" aria-hidden="true">
@@ -1508,7 +1559,7 @@
                   </div>
                 </div>
               </article>
-              <article class="hero-asset-card hero-feature-card rounded-2xl p-4 shadow-lg backdrop-blur interactive-card">
+              <article class="hero-asset-card hero-feature-card hero-card-seo rounded-2xl p-4 shadow-lg backdrop-blur interactive-card">
                 <div class="hero-feature-panel">
                   <div class="hero-feature-row">
                     <span class="feature-icon" aria-hidden="true">
@@ -1523,7 +1574,7 @@
                   </div>
                 </div>
               </article>
-              <article class="hero-asset-card hero-diagram-card rounded-2xl p-4 shadow-lg backdrop-blur interactive-card" aria-label="Visual conversion flow from visitor to booked call">
+              <article class="hero-asset-card hero-diagram-card hero-card-flow rounded-2xl p-4 shadow-lg backdrop-blur interactive-card" aria-label="Visual conversion flow from visitor to booked call">
                 <p class="text-xs font-semibold uppercase tracking-wide text-sky-100/90">Craytivo Conversion Flow</p>
                 <div class="hero-diagram mt-3">
                   <svg viewBox="0 0 300 122" role="img" aria-label="Diagram showing website visitors moving through trust signals and clear pages into booked calls">
