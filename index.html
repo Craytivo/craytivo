@@ -33,33 +33,31 @@
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700&display=swap" rel="stylesheet" /></noscript>
   <link rel="stylesheet" href="assets/css/tailwind.css?v=20260214" />
-  <!-- Google Analytics 4 (deferred to reduce initial main-thread and network pressure) -->
+  <!-- Google Analytics 4 (interaction-first to prioritize page speed) -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     (function scheduleGaLoad() {
+      let gaRequested = false;
       function loadGa() {
-        if (window.__gaLoaded) return;
+        if (window.__gaLoaded || gaRequested) return;
+        gaRequested = true;
         window.__gaLoaded = true;
         const script = document.createElement('script');
         script.src = 'https://www.googletagmanager.com/gtag/js?id=G-DMKNSQXDJL';
         script.async = true;
         document.head.appendChild(script);
         gtag('config', 'G-DMKNSQXDJL');
+        window.removeEventListener('pointerdown', loadGa, true);
+        window.removeEventListener('keydown', loadGa, true);
+        window.removeEventListener('scroll', loadGa, true);
       }
-      function queueLoad() {
-        if ('requestIdleCallback' in window) {
-          window.requestIdleCallback(loadGa, { timeout: 4000 });
-        } else {
-          window.setTimeout(loadGa, 2500);
-        }
-      }
-      if (document.readyState === 'complete') {
-        queueLoad();
-      } else {
-        window.addEventListener('load', queueLoad, { once: true });
-      }
+      window.addEventListener('pointerdown', loadGa, { once: true, capture: true });
+      window.addEventListener('keydown', loadGa, { once: true, capture: true });
+      window.addEventListener('scroll', loadGa, { once: true, capture: true });
+      // Fallback to still capture sessions without interaction.
+      window.setTimeout(loadGa, 12000);
     })();
   </script>
   <script type="application/ld+json">
@@ -2192,9 +2190,9 @@
       document.addEventListener(evt, eagerEnhancedUxInit, { capture: true });
     });
     if ('requestIdleCallback' in window) {
-      window.requestIdleCallback(initEnhancedUx, { timeout: 2200 });
+      window.requestIdleCallback(initEnhancedUx, { timeout: 6500 });
     } else {
-      window.setTimeout(initEnhancedUx, 1400);
+      window.setTimeout(initEnhancedUx, 5000);
     }
   </script>
 </body>
