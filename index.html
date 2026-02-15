@@ -33,13 +33,34 @@
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700&display=swap" rel="stylesheet" /></noscript>
   <link rel="stylesheet" href="assets/css/tailwind.css?v=20260214" />
-  <!-- Google Analytics 4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DMKNSQXDJL"></script>
+  <!-- Google Analytics 4 (deferred to reduce initial main-thread and network pressure) -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-DMKNSQXDJL');
+    (function scheduleGaLoad() {
+      function loadGa() {
+        if (window.__gaLoaded) return;
+        window.__gaLoaded = true;
+        const script = document.createElement('script');
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-DMKNSQXDJL';
+        script.async = true;
+        document.head.appendChild(script);
+        gtag('config', 'G-DMKNSQXDJL');
+      }
+      function queueLoad() {
+        if ('requestIdleCallback' in window) {
+          window.requestIdleCallback(loadGa, { timeout: 4000 });
+        } else {
+          window.setTimeout(loadGa, 2500);
+        }
+      }
+      if (document.readyState === 'complete') {
+        queueLoad();
+      } else {
+        window.addEventListener('load', queueLoad, { once: true });
+      }
+    })();
   </script>
   <script type="application/ld+json">
     {
@@ -1802,75 +1823,85 @@
       });
     });
 
-    // Form UX enhancements
-    const form = document.getElementById('leadForm');
-    const submitBtn = document.getElementById('submitBtn');
-    const toStep2Btn = document.getElementById('toStep2Btn');
-    const backToStep1Btn = document.getElementById('backToStep1Btn');
-    const formStep1 = document.getElementById('formStep1');
-    const formStep2 = document.getElementById('formStep2');
-    const formStepLabel = document.getElementById('formStepLabel');
-    const formProgressFill = document.getElementById('formProgressFill');
-    const formError = document.getElementById('formError');
-    const formStatus = document.getElementById('formStatus');
-    const fullName = document.getElementById('fullName');
-    const email = document.getElementById('email');
-    const projectType = document.getElementById('projectType');
-    const budgetRange = document.getElementById('budgetRange');
-    const timeline = document.getElementById('timeline');
-    const primaryGoal = document.getElementById('primaryGoal');
-    const message = document.getElementById('message');
-    const leadScore = document.getElementById('leadScore');
-    const leadTier = document.getElementById('leadTier');
-    const leadTags = document.getElementById('leadTags');
-    const followUpSequence = document.getElementById('followUpSequence');
-    const utmSource = document.getElementById('utmSource');
-    const utmMedium = document.getElementById('utmMedium');
-    const utmCampaign = document.getElementById('utmCampaign');
-    const utmContent = document.getElementById('utmContent');
-    const utmTerm = document.getElementById('utmTerm');
-    const referrerSource = document.getElementById('referrerSource');
-    const honeypot = document.getElementById('website');
-    const onPageConfirm = document.getElementById('onPageConfirm');
-    const consent = document.getElementById('consent');
-    const summaryProject = document.getElementById('summaryProject');
-    const summaryBudget = document.getElementById('summaryBudget');
-    const summaryTimeline = document.getElementById('summaryTimeline');
-    const fieldErrorMap = {
-      fullName: document.getElementById('fullNameError'),
-      email: document.getElementById('emailError'),
-      projectType: document.getElementById('projectTypeError'),
-      budgetRange: document.getElementById('budgetRangeError'),
-      timeline: document.getElementById('timelineError'),
-      primaryGoal: document.getElementById('primaryGoalError'),
-      message: document.getElementById('messageError'),
-      consent: document.getElementById('consentError')
-    };
-    let currentFormStep = 1;
+    // Defer heavier form/reveal enhancements until idle or clear contact intent.
+    let enhancedUxInitialized = false;
+    const enhancedUxInitEvents = ['focusin', 'pointerdown', 'keydown', 'touchstart'];
+    function initEnhancedUx() {
+      if (enhancedUxInitialized) return;
+      enhancedUxInitialized = true;
+      enhancedUxInitEvents.forEach((evt) => {
+        document.removeEventListener(evt, eagerEnhancedUxInit, true);
+      });
 
-    // Show on-page confirmation after Formspree redirects back to this page.
-    const pageParams = new URLSearchParams(window.location.search);
-    if (onPageConfirm && pageParams.get('submitted') === '1') {
-      onPageConfirm.classList.remove('hidden');
-      const cleaned = new URL(window.location.href);
-      cleaned.searchParams.delete('submitted');
-      history.replaceState(null, '', `${cleaned.pathname}${cleaned.search}${cleaned.hash}`);
-    }
+      // Form UX enhancements
+      const form = document.getElementById('leadForm');
+      const submitBtn = document.getElementById('submitBtn');
+      const toStep2Btn = document.getElementById('toStep2Btn');
+      const backToStep1Btn = document.getElementById('backToStep1Btn');
+      const formStep1 = document.getElementById('formStep1');
+      const formStep2 = document.getElementById('formStep2');
+      const formStepLabel = document.getElementById('formStepLabel');
+      const formProgressFill = document.getElementById('formProgressFill');
+      const formError = document.getElementById('formError');
+      const formStatus = document.getElementById('formStatus');
+      const fullName = document.getElementById('fullName');
+      const email = document.getElementById('email');
+      const projectType = document.getElementById('projectType');
+      const budgetRange = document.getElementById('budgetRange');
+      const timeline = document.getElementById('timeline');
+      const primaryGoal = document.getElementById('primaryGoal');
+      const message = document.getElementById('message');
+      const leadScore = document.getElementById('leadScore');
+      const leadTier = document.getElementById('leadTier');
+      const leadTags = document.getElementById('leadTags');
+      const followUpSequence = document.getElementById('followUpSequence');
+      const utmSource = document.getElementById('utmSource');
+      const utmMedium = document.getElementById('utmMedium');
+      const utmCampaign = document.getElementById('utmCampaign');
+      const utmContent = document.getElementById('utmContent');
+      const utmTerm = document.getElementById('utmTerm');
+      const referrerSource = document.getElementById('referrerSource');
+      const honeypot = document.getElementById('website');
+      const onPageConfirm = document.getElementById('onPageConfirm');
+      const consent = document.getElementById('consent');
+      const summaryProject = document.getElementById('summaryProject');
+      const summaryBudget = document.getElementById('summaryBudget');
+      const summaryTimeline = document.getElementById('summaryTimeline');
+      const fieldErrorMap = {
+        fullName: document.getElementById('fullNameError'),
+        email: document.getElementById('emailError'),
+        projectType: document.getElementById('projectTypeError'),
+        budgetRange: document.getElementById('budgetRangeError'),
+        timeline: document.getElementById('timelineError'),
+        primaryGoal: document.getElementById('primaryGoalError'),
+        message: document.getElementById('messageError'),
+        consent: document.getElementById('consentError')
+      };
+      let currentFormStep = 1;
 
-    // Capture campaign/source context for lightweight CRM tagging.
-    const params = new URLSearchParams(window.location.search);
-    if (utmSource) utmSource.value = params.get('utm_source') || '(direct)';
-    if (utmMedium) utmMedium.value = params.get('utm_medium') || '(none)';
-    if (utmCampaign) utmCampaign.value = params.get('utm_campaign') || '(none)';
-    if (utmContent) utmContent.value = params.get('utm_content') || '(none)';
-    if (utmTerm) utmTerm.value = params.get('utm_term') || '(none)';
-    if (referrerSource) referrerSource.value = document.referrer || '(none)';
+      // Show on-page confirmation after Formspree redirects back to this page.
+      const pageParams = new URLSearchParams(window.location.search);
+      if (onPageConfirm && pageParams.get('submitted') === '1') {
+        onPageConfirm.classList.remove('hidden');
+        const cleaned = new URL(window.location.href);
+        cleaned.searchParams.delete('submitted');
+        history.replaceState(null, '', `${cleaned.pathname}${cleaned.search}${cleaned.hash}`);
+      }
 
-    function cleanTag(value) {
-      return (value || 'none').toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');
-    }
+      // Capture campaign/source context for lightweight CRM tagging.
+      const params = new URLSearchParams(window.location.search);
+      if (utmSource) utmSource.value = params.get('utm_source') || '(direct)';
+      if (utmMedium) utmMedium.value = params.get('utm_medium') || '(none)';
+      if (utmCampaign) utmCampaign.value = params.get('utm_campaign') || '(none)';
+      if (utmContent) utmContent.value = params.get('utm_content') || '(none)';
+      if (utmTerm) utmTerm.value = params.get('utm_term') || '(none)';
+      if (referrerSource) referrerSource.value = document.referrer || '(none)';
 
-    function buildLeadScore() {
+      function cleanTag(value) {
+        return (value || 'none').toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');
+      }
+
+      function buildLeadScore() {
       let score = 0;
       const pType = projectType ? projectType.value : '';
       const budget = budgetRange ? budgetRange.value : '';
@@ -1937,9 +1968,9 @@
       if (leadTier) leadTier.value = tier;
       if (leadTags) leadTags.value = tags;
       if (followUpSequence) followUpSequence.value = sequence;
-    }
+      }
 
-    function setFieldError(field, messageText) {
+      function setFieldError(field, messageText) {
       if (!field) return;
       const errorEl = fieldErrorMap[field.id];
       if (!errorEl) return;
@@ -1952,17 +1983,17 @@
         errorEl.classList.add('hidden');
         field.removeAttribute('aria-invalid');
       }
-    }
+      }
 
-    function getFieldMessage(field) {
+      function getFieldMessage(field) {
       if (!field) return '';
       if (field.id === 'email' && field.validity.typeMismatch) return 'Please enter a valid email address.';
       if (field.id === 'message' && field.validity.tooShort) return 'Please provide at least 20 characters.';
       if (field.validity.valueMissing) return 'This field is required.';
       return '';
-    }
+      }
 
-    function setStep(step) {
+      function setStep(step) {
       currentFormStep = step;
       const isStepOne = step === 1;
       if (formStep1 && formStep2) {
@@ -1971,9 +2002,9 @@
       }
       if (formStepLabel) formStepLabel.textContent = `Step ${step} of 2`;
       if (formProgressFill) formProgressFill.style.width = isStepOne ? '50%' : '100%';
-    }
+      }
 
-    function validateFields(fields) {
+      function validateFields(fields) {
       let valid = true;
       fields.forEach((field) => {
         if (!field || field.type === 'hidden') return;
@@ -1985,15 +2016,15 @@
         }
       });
       return valid;
-    }
+      }
 
-    function updateSummary() {
-      if (summaryProject) summaryProject.textContent = `Project: ${projectType.value || 'Not set'}`;
-      if (summaryBudget) summaryBudget.textContent = `Budget: ${budgetRange.value || 'Not set'}`;
-      if (summaryTimeline) summaryTimeline.textContent = `Timeline: ${timeline.value || 'Not set'}`;
-    }
+      function updateSummary() {
+        if (summaryProject) summaryProject.textContent = `Project: ${projectType.value || 'Not set'}`;
+        if (summaryBudget) summaryBudget.textContent = `Budget: ${budgetRange.value || 'Not set'}`;
+        if (summaryTimeline) summaryTimeline.textContent = `Timeline: ${timeline.value || 'Not set'}`;
+      }
 
-    function applyChoiceChip(targetId, value, button) {
+      function applyChoiceChip(targetId, value, button) {
       const target = document.getElementById(targetId);
       if (!target) return;
       target.value = value;
@@ -2008,18 +2039,18 @@
       button.setAttribute('aria-pressed', 'true');
       setFieldError(target, '');
       updateSummary();
-    }
+      }
 
-    document.querySelectorAll('.choice-chip').forEach((chip) => {
-      chip.addEventListener('click', () => {
-        const target = chip.getAttribute('data-target');
-        const value = chip.getAttribute('data-value') || '';
-        applyChoiceChip(target, value, chip);
+      document.querySelectorAll('.choice-chip').forEach((chip) => {
+        chip.addEventListener('click', () => {
+          const target = chip.getAttribute('data-target');
+          const value = chip.getAttribute('data-value') || '';
+          applyChoiceChip(target, value, chip);
+        });
       });
-    });
 
-    if (toStep2Btn) {
-      toStep2Btn.addEventListener('click', () => {
+      if (toStep2Btn) {
+        toStep2Btn.addEventListener('click', () => {
         const stepOneFields = [fullName, email, projectType];
         const isValid = validateFields(stepOneFields);
         if (!isValid) {
@@ -2036,115 +2067,134 @@
         formStatus.textContent = 'Step 2: confirm scope and submit your inquiry.';
         setStep(2);
         updateSummary();
-      });
-    }
+        });
+      }
 
-    if (backToStep1Btn) {
-      backToStep1Btn.addEventListener('click', () => {
-        setStep(1);
-      });
-    }
+      if (backToStep1Btn) {
+        backToStep1Btn.addEventListener('click', () => {
+          setStep(1);
+        });
+      }
 
-    const validatedFields = [fullName, email, projectType, primaryGoal, message, consent];
-    validatedFields.forEach((field) => {
-      const evt = field.tagName === 'SELECT' || field.type === 'checkbox' ? 'change' : 'input';
-      field.addEventListener(evt, () => {
-        if (field.tagName === 'SELECT') {
-          field.classList.toggle('has-value', field.value !== '');
+      const validatedFields = [fullName, email, projectType, primaryGoal, message, consent].filter(Boolean);
+      validatedFields.forEach((field) => {
+        const evt = field.tagName === 'SELECT' || field.type === 'checkbox' ? 'change' : 'input';
+        field.addEventListener(evt, () => {
+          if (field.tagName === 'SELECT') {
+            field.classList.toggle('has-value', field.value !== '');
+          }
+          if (!field.checkValidity()) {
+            setFieldError(field, getFieldMessage(field));
+            return;
+          }
+          setFieldError(field, '');
+          updateSummary();
+        });
+      });
+
+      if (form) {
+        form.addEventListener('submit', (e) => {
+          if (currentFormStep !== 2) {
+            e.preventDefault();
+            setStep(2);
+            updateSummary();
+            return;
+          }
+          const visibleFieldValid = validateFields([fullName, email, projectType, primaryGoal, message, consent]);
+          let chipsValid = true;
+          if (!budgetRange.value) {
+            setFieldError(budgetRange, 'Please choose a budget range.');
+            chipsValid = false;
+          } else {
+            setFieldError(budgetRange, '');
+          }
+          if (!timeline.value) {
+            setFieldError(timeline, 'Please choose a timeline.');
+            chipsValid = false;
+          } else {
+            setFieldError(timeline, '');
+          }
+          if (!visibleFieldValid || !chipsValid) {
+            e.preventDefault();
+            formError.classList.remove('hidden');
+            formStatus.classList.remove('text-green-700');
+            formStatus.classList.remove('text-slate-600');
+            formStatus.classList.add('text-red-700');
+            formStatus.textContent = 'Submission failed. Please fill in all required fields and try again.';
+            return;
+          }
+          if (honeypot && honeypot.value.trim() !== '') {
+            e.preventDefault();
+            formStatus.classList.remove('text-green-700');
+            formStatus.classList.remove('text-slate-600');
+            formStatus.classList.add('text-red-700');
+            formStatus.textContent = 'Submission failed. Please try again.';
+            return;
+          }
+          validatedFields.forEach((field) => setFieldError(field, ''));
+          setFieldError(budgetRange, '');
+          setFieldError(timeline, '');
+          buildLeadScore();
+          formError.classList.add('hidden');
+          formStatus.classList.remove('text-red-700');
+          formStatus.classList.remove('text-slate-600');
+          formStatus.classList.add('text-green-700');
+          formStatus.textContent = 'Submitting your inquiry now...';
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Sending...';
+          setTimeout(() => {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send Inquiry';
+          }, 12000);
+        });
+      }
+      [projectType, primaryGoal].forEach((selectField) => {
+        if (selectField) {
+          selectField.classList.toggle('has-value', selectField.value !== '');
         }
-        if (!field.checkValidity()) {
-          setFieldError(field, getFieldMessage(field));
-          return;
-        }
-        setFieldError(field, '');
-        updateSummary();
       });
-    });
+      setStep(1);
+      updateSummary();
 
-    form.addEventListener('submit', (e) => {
-      if (currentFormStep !== 2) {
-        e.preventDefault();
-        setStep(2);
-        updateSummary();
-        return;
-      }
-      const visibleFieldValid = validateFields([fullName, email, projectType, primaryGoal, message, consent]);
-      let chipsValid = true;
-      if (!budgetRange.value) {
-        setFieldError(budgetRange, 'Please choose a budget range.');
-        chipsValid = false;
-      } else {
-        setFieldError(budgetRange, '');
-      }
-      if (!timeline.value) {
-        setFieldError(timeline, 'Please choose a timeline.');
-        chipsValid = false;
-      } else {
-        setFieldError(timeline, '');
-      }
-      if (!visibleFieldValid || !chipsValid) {
-        e.preventDefault();
-        formError.classList.remove('hidden');
-        formStatus.classList.remove('text-green-700');
-        formStatus.classList.remove('text-slate-600');
-        formStatus.classList.add('text-red-700');
-        formStatus.textContent = 'Submission failed. Please fill in all required fields and try again.';
-        return;
-      }
-      if (honeypot && honeypot.value.trim() !== '') {
-        e.preventDefault();
-        formStatus.classList.remove('text-green-700');
-        formStatus.classList.remove('text-slate-600');
-        formStatus.classList.add('text-red-700');
-        formStatus.textContent = 'Submission failed. Please try again.';
-        return;
-      }
-      validatedFields.forEach((field) => setFieldError(field, ''));
-      setFieldError(budgetRange, '');
-      setFieldError(timeline, '');
-      buildLeadScore();
-      formError.classList.add('hidden');
-      formStatus.classList.remove('text-red-700');
-      formStatus.classList.remove('text-slate-600');
-      formStatus.classList.add('text-green-700');
-      formStatus.textContent = 'Submitting your inquiry now...';
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Sending...';
-      setTimeout(() => {
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Send Inquiry';
-      }, 12000);
-    });
-    [projectType, primaryGoal].forEach((selectField) => {
-      if (selectField) {
-        selectField.classList.toggle('has-value', selectField.value !== '');
-      }
-    });
-    setStep(1);
-    updateSummary();
-
-    // Subtle reveal animation for section content
-    const revealTargets = document.querySelectorAll(
-      'main section h2, main section .interactive-card, main section .panel-muted'
-    );
-    if ('IntersectionObserver' in window) {
-      revealTargets.forEach((el, index) => {
-        el.classList.add('reveal');
-        el.style.transitionDelay = `${Math.min(index * 24, 160)}ms`;
-      });
-
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('in-view');
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        { rootMargin: '0px 0px -10% 0px', threshold: 0.12 }
+      // Subtle reveal animation for section content
+      const revealTargets = document.querySelectorAll(
+        'main section h2, main section .interactive-card, main section .panel-muted'
       );
-      revealTargets.forEach((el) => observer.observe(el));
+      if ('IntersectionObserver' in window) {
+        revealTargets.forEach((el, index) => {
+          el.classList.add('reveal');
+          el.style.transitionDelay = `${Math.min(index * 24, 160)}ms`;
+        });
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { rootMargin: '0px 0px -10% 0px', threshold: 0.12 }
+        );
+        revealTargets.forEach((el) => observer.observe(el));
+      }
+    }
+
+    function eagerEnhancedUxInit(event) {
+      const target = event.target;
+      if (!(target instanceof Element)) return;
+      if (target.closest('#contact') || target.closest('#leadForm') || target.closest('.choice-chip')) {
+        initEnhancedUx();
+      }
+    }
+    enhancedUxInitEvents.forEach((evt) => {
+      document.addEventListener(evt, eagerEnhancedUxInit, { capture: true });
+    });
+    if ('requestIdleCallback' in window) {
+      window.requestIdleCallback(initEnhancedUx, { timeout: 2200 });
+    } else {
+      window.setTimeout(initEnhancedUx, 1400);
     }
   </script>
 </body>
