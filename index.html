@@ -802,6 +802,29 @@
       color: #334155;
       text-align: center;
     }
+    #process,
+    #work,
+    #testimonials {
+      background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+    }
+    #process .section-intro,
+    #work .section-intro,
+    #testimonials .section-intro {
+      max-width: 62ch;
+    }
+    #process .interactive-card,
+    #work .interactive-card,
+    #testimonials .interactive-card,
+    #pricing-snapshot .pricing-tier {
+      border-color: #e2e8f0;
+      box-shadow: 0 12px 22px -20px rgba(15, 23, 42, 0.34);
+    }
+    #process .interactive-card:hover,
+    #work .interactive-card:hover,
+    #testimonials .interactive-card:hover,
+    #pricing-snapshot .pricing-tier:hover {
+      box-shadow: 0 16px 30px -22px rgba(15, 23, 42, 0.4);
+    }
     .form-progress {
       height: 6px;
       border-radius: 9999px;
@@ -2308,6 +2331,47 @@
         }
       });
     }
+
+    // Real-user Core Web Vitals tracking for ongoing mobile tuning.
+    function reportWebVital(metric) {
+      const eventPayload = {
+        metric_name: metric.name,
+        metric_value: Number(metric.value.toFixed(2)),
+        metric_id: metric.id,
+        metric_rating: metric.rating || 'unknown',
+        page_path: window.location.pathname,
+        device_type: window.matchMedia('(max-width: 767px)').matches ? 'mobile' : 'desktop',
+        network_type: (navigator.connection && navigator.connection.effectiveType) || 'unknown'
+      };
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'web_vitals', eventPayload);
+      } else if (Array.isArray(window.dataLayer)) {
+        window.dataLayer.push({ event: 'web_vitals', ...eventPayload });
+      }
+    }
+
+    function initWebVitalsTracking() {
+      if (window.__webVitalsTrackingInit) return;
+      window.__webVitalsTrackingInit = true;
+      const loadVitals = async () => {
+        try {
+          const { onCLS, onINP, onLCP, onFCP, onTTFB } = await import('https://unpkg.com/web-vitals@4/dist/web-vitals.js?module');
+          onCLS(reportWebVital, { reportAllChanges: true });
+          onINP(reportWebVital);
+          onLCP(reportWebVital, { reportAllChanges: true });
+          onFCP(reportWebVital);
+          onTTFB(reportWebVital);
+        } catch (e) {
+          // Silent fail to avoid impacting page UX if CDN is unavailable.
+        }
+      };
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(loadVitals, { timeout: 5000 });
+      } else {
+        setTimeout(loadVitals, 2200);
+      }
+    }
+    initWebVitalsTracking();
 
     // Lazy-load Calendly assets only when scheduling is requested.
     let calendlyLoadPromise = null;
