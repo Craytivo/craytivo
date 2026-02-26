@@ -29,8 +29,8 @@
             <a href="/website-maintenance-support-edmonton/" class="dropdown-link">Website Maintenance and Support</a>
           </div>
         </div>
+        <a href="/industries/" class="nav-link text-sm font-medium text-slate-600 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-600 focus-visible:ring-offset-2 rounded-md">Industries</a>
         <a href="/#process" class="nav-link text-sm font-medium text-slate-600 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-600 focus-visible:ring-offset-2 rounded-md">Process</a>
-        <a href="/#work" class="nav-link text-sm font-medium text-slate-600 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-600 focus-visible:ring-offset-2 rounded-md">Work</a>
         <a data-cta="header" href="${contactRoot}header-cta&utm_campaign=${campaign}#contact" class="cta rounded-md px-4 py-2 text-sm font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-600 focus-visible:ring-offset-2">Book Free 15-Min Call</a>
       </nav>
       <button id="menuBtn" class="inline-flex items-center justify-center rounded-md border border-slate-300 p-2 text-slate-700 md:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-600 focus-visible:ring-offset-2" aria-expanded="false" aria-controls="mobileMenu" aria-label="Toggle menu">
@@ -57,37 +57,43 @@
             <a href="/website-maintenance-support-edmonton/" class="mobile-link mobile-service-link">Website Maintenance and Support</a>
           </div>
         </details>
+        <a href="/industries/" class="mobile-link nav-link rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-600 focus-visible:ring-offset-2">Industries</a>
         <a href="/#process" class="mobile-link nav-link rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-600 focus-visible:ring-offset-2">Process</a>
-        <a href="/#work" class="mobile-link nav-link rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-600 focus-visible:ring-offset-2">Work</a>
         <a data-cta="mobile-header" href="${contactRoot}header-cta-mobile&utm_campaign=${campaign}#contact" class="mobile-link cta rounded-md px-3 py-2 text-center text-sm font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-600 focus-visible:ring-offset-2">Book Call</a>
       </div>
     </nav>
   `;
 
   const breadcrumbMap = {
-    '/web-developer-edmonton-small-business/': 'Small Business Website Design',
-    '/startup-website-developer-edmonton/': 'Startup Website Developer',
-    '/custom-website-design-edmonton/': 'Custom Website Design',
-    '/landing-page-design-edmonton/': 'Landing Page Design',
-    '/ecommerce-setup-edmonton/': 'E-commerce Setup',
-    '/technical-seo-performance-edmonton/': 'Technical SEO and Performance',
-    '/website-maintenance-support-edmonton/': 'Website Maintenance and Support'
+    '/web-developer-edmonton-small-business/': { label: 'Small Business Website Design', parentLabel: 'Services', parentHref: '/#services' },
+    '/startup-website-developer-edmonton/': { label: 'Startup Website Developer', parentLabel: 'Services', parentHref: '/#services' },
+    '/custom-website-design-edmonton/': { label: 'Custom Website Design', parentLabel: 'Services', parentHref: '/#services' },
+    '/landing-page-design-edmonton/': { label: 'Landing Page Design', parentLabel: 'Services', parentHref: '/#services' },
+    '/ecommerce-setup-edmonton/': { label: 'E-commerce Setup', parentLabel: 'Services', parentHref: '/#services' },
+    '/technical-seo-performance-edmonton/': { label: 'Technical SEO and Performance', parentLabel: 'Services', parentHref: '/#services' },
+    '/website-maintenance-support-edmonton/': { label: 'Website Maintenance and Support', parentLabel: 'Services', parentHref: '/#services' },
+    '/industries/': { label: 'Industries', parentLabel: 'Home', parentHref: '/' },
+    '/industries/contractor-websites-edmonton/': { label: 'Contractor Websites Edmonton', parentLabel: 'Industries', parentHref: '/industries/' },
+    '/industries/clinic-websites-edmonton/': { label: 'Clinic Websites Edmonton', parentLabel: 'Industries', parentHref: '/industries/' },
+    '/industries/professional-services-websites-edmonton/': { label: 'Professional Services Websites Edmonton', parentLabel: 'Industries', parentHref: '/industries/' }
   };
 
   const main = document.querySelector('main');
-  const crumbLabel = breadcrumbMap[window.location.pathname];
-  if (main && crumbLabel) {
+  const crumbMeta = breadcrumbMap[window.location.pathname];
+  if (main && crumbMeta) {
     const crumb = document.createElement('nav');
     crumb.className = 'service-breadcrumb-wrap';
     crumb.setAttribute('aria-label', 'Breadcrumb');
+    const parentTrail = crumbMeta.parentHref === '/'
+      ? ''
+      : `<span class="sep">/</span><a href="${crumbMeta.parentHref}">${crumbMeta.parentLabel}</a>`;
     crumb.innerHTML = `
       <div class="mx-auto max-w-6xl sm:px-6 lg:px-8">
         <div class="service-breadcrumb">
           <a href="/">Home</a>
+          ${parentTrail}
           <span class="sep">/</span>
-          <a href="/#services">Services</a>
-          <span class="sep">/</span>
-          <span aria-current="page">${crumbLabel}</span>
+          <span aria-current="page">${crumbMeta.label}</span>
         </div>
       </div>
     `;
