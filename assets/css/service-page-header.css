@@ -28,8 +28,8 @@ h1,h2,.font-display{font-family:Sora,Manrope,ui-sans-serif,system-ui;letter-spac
 @media (max-width:640px){
   header .mx-auto{padding-top:.65rem;padding-bottom:.65rem}
   header .cta{padding:.58rem .86rem;font-size:.8rem}
-  main section{padding-top:3rem!important;padding-bottom:3rem!important}
-  main section:first-of-type{padding-top:3.5rem!important;padding-bottom:3.5rem!important}
+  main section{padding-top:2.65rem!important;padding-bottom:2.65rem!important}
+  main section:first-of-type{padding-top:3.1rem!important;padding-bottom:3.1rem!important}
   main .mx-auto{padding-left:1rem;padding-right:1rem}
   main h1{font-size:2rem;line-height:1.1;max-width:18ch}
   main .md\:grid-cols-3{gap:.9rem}
@@ -37,10 +37,22 @@ h1,h2,.font-display{font-family:Sora,Manrope,ui-sans-serif,system-ui;letter-spac
   #mobileMenu .nav-link::after{display:none}
   .nav-dropdown-menu{min-width:14.5rem;left:0}
 }
+@media (max-width:414px){
+  main section{padding-top:2.35rem!important;padding-bottom:2.35rem!important}
+  main section:first-of-type{padding-top:2.8rem!important;padding-bottom:2.8rem!important}
+  main h1{font-size:1.92rem;max-width:17.5ch}
+}
 @media (max-width:420px){
   header .mx-auto{padding-left:.75rem;padding-right:.75rem}
-  main h1{font-size:1.85rem;max-width:17ch}
+  main h1{font-size:1.82rem;max-width:17ch}
   .service-breadcrumb{font-size:.7rem;padding:.5rem .75rem}
+}
+@media (min-width:641px) and (max-width:1024px){
+  main section{padding-top:3.35rem!important;padding-bottom:3.35rem!important}
+  main section:first-of-type{padding-top:3.75rem!important;padding-bottom:3.75rem!important}
+}
+@media (min-width:1025px) and (max-width:1439px){
+  main section{padding-top:3.85rem!important;padding-bottom:3.85rem!important}
 }
 .service-breadcrumb-wrap{border-bottom:1px solid #e2e8f0;background:#fff}
 .service-breadcrumb{display:flex;flex-wrap:wrap;align-items:center;gap:.45rem;font-size:.75rem;color:#64748b;padding:.55rem 1rem}
