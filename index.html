@@ -41,32 +41,7 @@
   <link rel="stylesheet" href="assets/css/tailwind.css?v=20260214" />
   <link rel="stylesheet" href="assets/css/home.css?v=20260227a" />
   <!-- Google Analytics 4 (interaction-first to prioritize page speed) -->
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    (function scheduleGaLoad() {
-      let gaRequested = false;
-      function loadGa() {
-        if (window.__gaLoaded || gaRequested) return;
-        gaRequested = true;
-        window.__gaLoaded = true;
-        const script = document.createElement('script');
-        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-DMKNSQXDJL';
-        script.async = true;
-        document.head.appendChild(script);
-        gtag('config', 'G-DMKNSQXDJL');
-        window.removeEventListener('pointerdown', loadGa, true);
-        window.removeEventListener('keydown', loadGa, true);
-        window.removeEventListener('scroll', loadGa, true);
-      }
-      window.addEventListener('pointerdown', loadGa, { once: true, capture: true });
-      window.addEventListener('keydown', loadGa, { once: true, capture: true });
-      window.addEventListener('scroll', loadGa, { once: true, capture: true });
-      // Fallback to still capture sessions without interaction.
-      window.setTimeout(loadGa, 12000);
-    })();
-  </script>
+  <script src="/assets/js/ga4.js?v=20260304" defer></script>
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -343,7 +318,21 @@
             <a href="/website-maintenance-support-edmonton/" class="dropdown-link">Website Maintenance and Support</a>
           </div>
         </div>
-        <a href="/industries/" class="nav-link rounded-md text-sm font-medium text-slate-600 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-600 focus-visible:ring-offset-2">Industries</a>
+        <div class="nav-dropdown">
+          <a href="/industries/" class="nav-link nav-dropdown-trigger rounded-md text-sm font-medium text-slate-600 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-600 focus-visible:ring-offset-2">
+            Industries
+            <svg class="nav-dropdown-caret" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </a>
+          <div class="nav-dropdown-menu" aria-label="Industry pages">
+            <a href="/industries/" class="dropdown-link">Industries Hub</a>
+            <a href="/industries/contractor-websites-edmonton/" class="dropdown-link">Contractors and Trades</a>
+            <a href="/industries/clinic-websites-edmonton/" class="dropdown-link">Health and Wellness Clinics</a>
+            <a href="/industries/professional-services-websites-edmonton/" class="dropdown-link">Professional Services</a>
+            <a href="/industries/creative-studios-rehearsal-spaces-edmonton/" class="dropdown-link">Creative Studios and Rehearsal Spaces</a>
+          </div>
+        </div>
         <a href="#process" data-section-link class="nav-link rounded-md text-sm font-medium text-slate-600 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-600 focus-visible:ring-offset-2">Process</a>
         <a href="#about" data-section-link class="nav-link rounded-md text-sm font-medium text-slate-600 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-600 focus-visible:ring-offset-2">About</a>
         <a href="#contact" aria-label="Jump to contact section to book a free 15-minute call" class="cta-primary whitespace-nowrap rounded-md px-4 py-2 text-sm font-semibold shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-600 focus-visible:ring-offset-2">Book a Free 15-Min Call</a>
@@ -494,6 +483,16 @@
             </div>
           </div>
           <p class="mx-auto mt-4 max-w-3xl text-center text-xs text-slate-600">Recent delivery includes landing pages, website refreshes, e-commerce setup, and ongoing maintenance support.</p>
+          <figure class="mx-auto mt-6 max-w-2xl rounded-2xl border border-slate-200 bg-white p-4 text-left">
+            <p class="text-[11px] font-medium tracking-wide text-slate-500">Google Review &bull; 5 Stars</p>
+            <blockquote class="mt-2 text-sm leading-relaxed text-slate-700">
+              "Amazing experience working with our Craytivo! He created a highly interactive website that really brought our vision to life. The turnaround time was very fast, and his ongoing support has been incredibly helpful whenever we need updates or assistance. His SEO services have also helped increase our bookings. Highly recommend!"
+            </blockquote>
+            <figcaption class="mt-3 text-[11px] font-semibold tracking-wide text-slate-600">
+              Psalm Samuels &bull;
+              <a href="https://otvibez.com/" target="_blank" rel="noopener noreferrer" class="underline decoration-slate-300 underline-offset-2 hover:text-slate-900">OTvibez</a>
+            </figcaption>
+          </figure>
           <p class="mx-auto mt-2 max-w-3xl text-center text-xs text-slate-500">Client logos displayed to represent past project work and collaborations.</p>
         </div>
       </div>
@@ -699,27 +698,50 @@
         <h2 class="text-3xl font-bold tracking-tight">Process</h2>
         <p class="section-intro mt-3">A simple process that keeps projects moving quickly while protecting quality and clarity.</p>
         <div class="mt-10 grid gap-6 md:grid-cols-3">
-          <article class="rounded-2xl bg-white p-6 shadow-sm interactive-card">
-            <p class="text-sm font-semibold text-sky-700">1. Strategy (Day 1-2)</p>
-            <p class="mt-2 text-sm text-slate-600">Define goals, audience, and offer before design starts.</p>
-            <p class="mt-2 text-xs text-slate-600"><span class="font-semibold text-slate-700">Deliverable:</span> Page map + scope summary.</p>
-            <p class="mt-1 text-xs text-slate-600"><span class="font-semibold text-slate-700">Need from you:</span> Brief, goals, and references.</p>
+          <article class="process-card rounded-2xl border bg-white p-6 shadow-sm interactive-card">
+            <div class="flex items-center gap-3">
+              <span class="process-step-badge">1</span>
+              <div>
+                <p class="text-base font-semibold text-sky-700">Strategy</p>
+                <p class="text-xs font-medium uppercase tracking-wide text-slate-500">Day 1-2</p>
+              </div>
+            </div>
+            <p class="mt-3 text-sm leading-relaxed text-slate-600">Define goals, audience, and offer before design starts.</p>
+            <ul class="mt-4 space-y-2 text-xs leading-relaxed text-slate-600">
+              <li><span class="font-semibold text-slate-700">Deliverable:</span> Page map and scope summary.</li>
+              <li><span class="font-semibold text-slate-700">Need from you:</span> Brief, goals, and references.</li>
+            </ul>
           </article>
-          <article class="rounded-2xl bg-white p-6 shadow-sm interactive-card">
-            <p class="text-sm font-semibold text-sky-700">2. Build (Day 2-10)</p>
-            <p class="mt-2 text-sm text-slate-600">Build a fast, responsive site with clean code.</p>
-            <p class="mt-2 text-xs text-slate-600"><span class="font-semibold text-slate-700">Deliverable:</span> Staging link + progress updates.</p>
-            <p class="mt-1 text-xs text-slate-600"><span class="font-semibold text-slate-700">Need from you:</span> Timely feedback in review windows.</p>
+          <article class="process-card rounded-2xl border bg-white p-6 shadow-sm interactive-card">
+            <div class="flex items-center gap-3">
+              <span class="process-step-badge">2</span>
+              <div>
+                <p class="text-base font-semibold text-sky-700">Build</p>
+                <p class="text-xs font-medium uppercase tracking-wide text-slate-500">Day 2-10</p>
+              </div>
+            </div>
+            <p class="mt-3 text-sm leading-relaxed text-slate-600">Build a fast, responsive site with clean code.</p>
+            <ul class="mt-4 space-y-2 text-xs leading-relaxed text-slate-600">
+              <li><span class="font-semibold text-slate-700">Deliverable:</span> Staging link and progress updates.</li>
+              <li><span class="font-semibold text-slate-700">Need from you:</span> Timely feedback in review windows.</li>
+            </ul>
           </article>
-          <article class="rounded-2xl bg-white p-6 shadow-sm interactive-card">
-            <p class="text-sm font-semibold text-sky-700">3. Launch & Optimize (Final 1-2 days)</p>
-            <p class="mt-2 text-sm text-slate-600">Launch, measure, and improve based on real behavior.</p>
-            <p class="mt-2 text-xs text-slate-600"><span class="font-semibold text-slate-700">Deliverable:</span> QA checklist + handoff notes.</p>
-            <p class="mt-1 text-xs text-slate-600"><span class="font-semibold text-slate-700">Need from you:</span> Final approvals and launch sign-off.</p>
+          <article class="process-card rounded-2xl border bg-white p-6 shadow-sm interactive-card">
+            <div class="flex items-center gap-3">
+              <span class="process-step-badge">3</span>
+              <div>
+                <p class="text-base font-semibold text-sky-700">Launch and Optimize</p>
+                <p class="text-xs font-medium uppercase tracking-wide text-slate-500">Final 1-2 Days</p>
+              </div>
+            </div>
+            <p class="mt-3 text-sm leading-relaxed text-slate-600">Launch, measure, and improve based on real behavior.</p>
+            <ul class="mt-4 space-y-2 text-xs leading-relaxed text-slate-600">
+              <li><span class="font-semibold text-slate-700">Deliverable:</span> QA checklist and handoff notes.</li>
+              <li><span class="font-semibold text-slate-700">Need from you:</span> Final approvals and launch sign-off.</li>
+            </ul>
           </article>
         </div>
-        <p class="mt-4 text-sm text-slate-600">Typical project rhythm: Kickoff &rarr; first draft &rarr; revisions &rarr; launch.</p>
-        <p class="mt-2 text-sm text-slate-600">Not sure where your project fits? I will map your best starting step in the free call.</p>
+        <p class="mt-8 text-sm leading-relaxed text-slate-600">Typical project rhythm: kickoff, first draft, revisions, and launch. If you are not sure where to start, I will map the best first step during the free call.</p>
       </div>
     </section>
 

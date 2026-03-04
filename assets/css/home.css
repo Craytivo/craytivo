@@ -461,9 +461,31 @@
       border-color: #e2e8f0;
       box-shadow: 0 12px 22px -20px rgba(15, 23, 42, 0.34);
     }
+    #process .process-card {
+      border-color: #e6edf5;
+      box-shadow: 0 10px 20px -22px rgba(15, 23, 42, 0.32);
+    }
+    #process .process-step-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 1.7rem;
+      height: 1.7rem;
+      border-radius: 9999px;
+      background: #eff6ff;
+      color: #1e3a8a;
+      font-size: 0.72rem;
+      font-weight: 700;
+      line-height: 1;
+      flex-shrink: 0;
+    }
     #process .interactive-card:hover,
     #pricing-snapshot .pricing-tier:hover {
       box-shadow: 0 16px 30px -22px rgba(15, 23, 42, 0.4);
+    }
+    #process .process-card:hover {
+      border-color: #d9e4f1;
+      box-shadow: 0 14px 24px -22px rgba(15, 23, 42, 0.36);
     }
     .form-progress {
       height: 6px;
